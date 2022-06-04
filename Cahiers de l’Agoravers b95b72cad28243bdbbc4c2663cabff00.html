@@ -1,0 +1,755 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cahiers de l’Agoravers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b95b72ca-d282-43bd-bbc4-c2663cabff00" class="page sans"><header><h1 class="page-title">Cahiers de l’Agoravers</h1></header><div class="page-body"><p id="1bfad073-a109-49b2-a007-43425394b5fa" class="">
+</p><p id="f37860a1-82cd-409b-9725-121ad10405fc" class=""><a href="https://gaite-lyrique.net/evenement/agoravers">Dix rencontres</a> furent organisées de Septembre 2021 a Juin 2022, pour imaginer des metavers alternatifs, sous le nom d’Agoravers, inspires par le regard de la Banlieue du Turfu: remise en cause des marges et peripheries, remix, valorisation des pratiques creatrices.</p><p id="fd36fbb4-5c88-4193-937c-5f88f6485813" class="">
+</p><p id="cf060cdc-64e0-4d8e-a811-052e9c2bea85" class="">Ce cursus fut organise a la Gaite Lyrique avec le soutien technique et financier de Wonda.</p><p id="022c559e-6eca-45c8-8ad8-69c059bae873" class="">
+</p><h3 id="1e6a5c38-0656-4c64-8d7e-966149a6039b" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26.html">RDV 001 | Pourquoi penser l&#x27;Agoravers ? </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26.html"><em>11.09.2021</em></a></h3><p id="387845e8-653f-4a9f-8a09-c2eeeaacbca2" class="">Lors de cet atelier nous visiterons différents types de mondes 
+virtuels se revendiquant comme &quot;Metavers&quot; pour essayer de définir 
+ensemble les bases de l&#x27;Agoravers: quel type de lieu est-ce ? Qu&#x27;est-ce 
+qu&#x27;on y fait ? Qui s&#x27;en occupe ? En quoi un Agoravers pourrait-il être 
+différent d&#x27;un Metavers ?</p><p id="2c6c6ca4-0dce-456b-84f5-74258de0f553" class="">
+</p><h3 id="45d58ee9-447b-4cf5-96f6-3bc5da609225" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e.html">RDV 002 | Mythologies et imaginaires partagés </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e.html"><em>02.10.2021</em></a></h3><p id="d4dd0ea4-cccf-4e05-afc4-2052c02058c2" class="">Quelle influence ont les mythologies 
+sur notre perception des mondes que nous habitons ? Qu&#x27;ils soient 
+physiques ou virtuels, sous forme de statue ou de tradition orale, les 
+mythes nous transmettent des valeurs et des grilles de lecture. Nous 
+découvrirons le travail de Yanis Ratbi (aka Syncretical) et 
+travaillerons avec lui sur l&#x27;invention de nouveaux mythes pour 
+l&#x27;Agoravers.</p><p id="d05b2b83-4572-469c-ab0f-4ab9d5818e82" class="">
+</p><h3 id="21bf417e-3ad8-435a-824c-4c6be4fc2291" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20003%20Pour%20un%20Agoravers%20afrocyberfeministe%20d4d39ae2bc0d42928b6000ba68d59481.html">RDV 003 | Pour un Agoravers afrocyberféministe </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20003%20Pour%20un%20Agoravers%20afrocyberfeministe%20d4d39ae2bc0d42928b6000ba68d59481.html"><em>06.11.2021</em></a></h3><p id="73bef7a6-8f1d-45a5-8e59-414c16625957" class="">Quelles valeurs et propositions le courant créatif et socio-culturel 
+de l&#x27;afrocyberfeminisme peut-il apporter à notre conception de nos 
+espaces, ou notre manière de faire société ? Lors de cet atelier, nous 
+commencerons par un tour d&#x27;horizon en surface du mouvement 
+afrocyberféministe, avant de plonger dans le travail de Krissima Poba 
+Ngouma (aka Nganga 2.0). Nous entrerons ensuite en immersion complète 
+dans le dense plurivers afrocyberféministe au travers de différents 
+projets internationaux pour y puiser des pratiques, des concepts, ou des
+ valeurs qui pourront transformer notre perception des métavers et 
+banlieues de demain.</p><p id="57f335fa-49f1-47b1-b254-813c42f91ac6" class="">
+</p><h3 id="ff9087a8-ebc6-472b-81d1-8cee9ead0639" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1.html">RDV 004 | L&#x27;élasticité du temps dans l&#x27;Agoravers </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1.html"><em>04.12.2021</em></a></h3><p id="475838c7-88ab-4473-a6be-be2b4712c3c0" class="">Prendre son temps en temps réel n’est pas chose facile, ensemble nous
+ tenterons de nous ouvrir aux multiples tempéraments du temps qui passe.
+ Cela se fera tant bien que mal en passant l&#x27;après-midi à contempler les
+ propositions spatio-temporelles de cinq jeux vidéo où le temps joue un 
+rôle impor-temps : Everything, The Stanley Parable, Spore, The Gardens 
+Between, GeoGuessr !</p><p id="65bd95fe-2379-476d-b0df-52d9f1bdcbc6" class="">
+</p><h3 id="5445beb4-5a99-45b0-811f-469b88c0dc71" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20005%20E-sport%20circulaire%20de%20l&#x27;echappatoire%20a%20l&#x27;i%20a120988e13f54266bdb166edda05f018.html">RDV 005 | E-sport circulaire : de l&#x27;échappatoire à l&#x27;investissement </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20005%20E-sport%20circulaire%20de%20l&#x27;echappatoire%20a%20l&#x27;i%20a120988e13f54266bdb166edda05f018.html"><em>08.01.2022</em></a></h3><p id="57bc2265-b2ca-4cb8-809f-1a90ce753366" class="">En 2016, le rappeur Danik faisait sensation sur YouTube en nous 
+balançant une ode poétique à la pratique du jeu vidéo FIFA et à son rôle
+ dans le quotidien du quartier. En même temps, le documentaire « 
+L’e-sport fait vivre » explorait en dix épisodes le boom de cette 
+tendance, depuis une compétition polonaise, IEM Katowice.Comment
+ l&#x27;e-sport peut-il participer au développement de la banlieue du TURFU 
+et lancer un processus circulaire et enrichissant à tous les niveaux ? Lors
+ de cet atelier, nous découvrirons une série de témoignages, dont celui 
+d&#x27;Édouard Hamel, responsable de commission e-sport dans son université à
+ Caen et celui de Riwad Salim designer et ancien sportif e-sport. Nous 
+visionnerons un documentaire sur le streamer Kamel Kebir alias Kameto et
+ son acolyte Amine Mekri dit Prime. Enfin, en collaboration avec Rashad 
+Karanouh et l’application Rapsodie, nous explorerons les pratiques de « 
+fantasy teams » en créant notre propre label de musique à partir de 
+thèses d&#x27;investissement gargantuesques.</p><p id="3ea956c0-52ab-4df2-bb8b-a966c2d1ca32" class="">
+</p><h3 id="c5f1391e-ff70-4f8e-8d4e-f7a40b2721de" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20006%20L&#x27;Agoravers%20saharien,%20deserts%20numeriques%20e%20d2d67f57bef748ac89a2f6e70a505ee1.html">RDV 006 | L&#x27;Agoravers saharien, déserts numériques et mers de sable </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20006%20L&#x27;Agoravers%20saharien,%20deserts%20numeriques%20e%20d2d67f57bef748ac89a2f6e70a505ee1.html"><em>05.02.2022</em></a></h3><p id="cc73baa3-1634-4fd6-9573-8e901a0c26d2" class="">En quoi les 9 millions de km2 de sable et les habitants, 
+réels comme rêvés, constituant le Sahara peuvent-ils nous préparer à 
+l&#x27;aventure infinie que nous promettent les métavers ? Cette séance, le 
+Sahara nous offre une métaphore de la Renaissance culturelle, de la 
+frugalité qui pousse à l&#x27;inventivité, en termes de nourriture, 
+d&#x27;architecture, de poésie, d&#x27;énergie renouvelable, de technologies 
+alternatives, de base de données et de savoir.</p><p id="abda1718-0901-44a4-942a-a965881d17e2" class="">Lors de l&#x27;atelier, nous passons l&#x27;après-midi à inventer, par écrit, 
+un Agoravers Saharo-turfuriste aux écosystèmes foisonnants grâce à la 
+renaissance des liens entre la banlieue et l&#x27;Afrique Saharienne, au 
+travers d&#x27;un contrat diasporique bilatéral du TURFU inspiré par la 
+charte de la Laeticia Africana.</p><p id="43c0f61c-282f-4b96-8f0c-80fe3fff599b" class="">
+</p><h3 id="a958ac28-dc7a-4ade-812e-ae6be8df6de4" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241.html">RDV 007 | Rêves, consciences et éveils à l&#x27;Internet des chichas </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241.html"><em>05.03.2022</em></a></h3><p id="76ccb20a-d4df-4a58-953d-fe624af51d0d" class="">Faudra-t-il toujours sortir du quartier pour accomplir ses rêves ?</p><p id="85d9714d-de5a-48f2-9313-9b1c01ce2fad" class="">Pour le dernier atelier de la saison, nous répondrons à cette 
+question fondamentale du projet de la Banlieue du Turfu. Dans la culture
+ quartier, la thématique du rêve impossible est récurrente tant dans le 
+discours des habitants que dans les productions artistiques. Annoncer 
+que nous souhaitons, devons quitter le quartier est une norme sociétale à
+ laquelle les banlieusard.e.s se sont habitués.</p><p id="ba800f5c-e6bc-4d1a-9d4f-4506a4205576" class="">« Les cités de France sont de vrais cimetières de rêves. »Ziak, Vrai / Faux</p><p id="2b0c760b-8c03-4f01-adc6-0a1b12dbfd21" class="">« J&#x27;ai beaucoup d&#x27;choses dans la tête. J&#x27;veux aller au bout d&#x27;mes 
+rêves Depuis toute petite, on m&#x27;a dit &quot;faut beaucoup d&#x27;oseille.” Donc je
+ médite dans ma peine, ou je médite dans mon teh. J&#x27;espère qu&#x27;ils 
+comprendront, que j&#x27;suis très loin de la terre. 3 millions c&#x27;est pas 
+assez. Pourquoi je n&#x27;pense qu&#x27;à brasser ?J&#x27;veux quitter le quartier. Une vue sur la mer, un cocktail, et m&#x27;faire masser. »Laetitia Kerfa, Rider toute la night.</p><p id="c755bdab-4d83-4cdd-ada0-194ed2f9520e" class="">La banlieue du Turfu est un rêve astronomique en germe à l&#x27;intérieur 
+de chacun de nous. Nous proposons un nouveau récit dans lequel se sortir
+ du quartier n’est plus la seule forme de réussite possible.</p><p id="7d6c2384-7340-42f7-a22c-d4b32056305f" class="">Rêve politique, rêve chimère, rêve de fuite, rêve matérialiste, rêve 
+baleine, rêve chamanique, dans nos rêves d&#x27;achèvements les plus fous, 
+n&#x27;oublions pas les rêves des banlieues du monde. Venez débattre avec 
+nous à l’internet des chichas et décider si oui ou non il faudra 
+continuer à sortir de la banlieue pour accomplir ses rêves. Nous 
+constituerons à partir de nos discussions Le Code de la Rue des 
+Multirêves.</p><p id="ed309bbb-2203-48bf-9b56-49fdd2500032" class="">
+</p><h3 id="df6379e1-c3ae-4747-8432-010ab7a144e2" class=""><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0.html">RDV 008 &amp; 009 | Game Jam </a><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0.html"><em>02.04.2022</em></a></h3><p id="8dd76d84-2321-4dbd-8d73-64de75daad34" class="">Jour 1 de l’Agora Jam, rencontre de création numérique lors de 
+laquelle naîtra le premier Agoravers suite à la collaboration de la <a href="http://banlieueduturfu.xyz/">Banlieue du Turfu</a>, de <a href="https://www.wondavr.com/">Wonda</a>, et du public de la Gaîté Lyrique.</p><p id="3a0fe1f4-0178-422d-adce-2413f3d12f90" class="">En 2222 de notre ère, l&#x27;Agoravers est devenu un lieu incontournable 
+de la scène turfurocosmique. On raconte que les premières esquisses de 
+ce lieu mythique virent le jour le 4 avril 2022, lors d’un Agora Jam 
+commandité par le Ministère de la Magie souhaitant, sous les plus courts
+ délais, lancer le premier métavers à mission… Saurez-vous répondre à 
+l’appel du Ministère de la Magie ?</p><p id="bead1c7d-1abd-40b0-b64d-ef5d7095f12a" class="">
+</p><p id="9100c423-c7b5-412e-91a5-13ba45812207" class="">
+</p><h3 id="3ddb17cb-b56e-4a46-956c-c290d228cc10" class="">RDV 010 | Exposition Agoravers <em>04.06.2022</em></h3><p id="72d2adce-3d48-4438-8644-01fe4052a7d8" class="">Venez goûter au fruit de la réflexion sur les métavers facilitée par la Banlieue du Turfu lors des neuf derniers mois. Jeux vidéo, collages, archives, pour la dernière date de l’Agoravers, nous organisons une rétrospective immersive pour vous plonger dans les inspirations du numérique turfuriste.</p><p id="726c977c-6f27-4dc4-8c31-aadddef55a50" class="">À 15h, Makan Fofana et Hugo Pilate feront une courte présentation sur leur expérience en tant qu&#x27;organisateurs du cycle Agoravers, leur réflexions sur les possibilités de l’Agoravers, et vous révéleront aussi l’impact qu’a déjà pu avoir le projet au-delà des ateliers !</p><p id="d4ed0c3e-7a29-416b-a55a-1439e42c496e" class="">
+</p><p id="ee526c0c-203d-48c3-a0f7-01e10239e2b5" class="">
+</p><p id="2447e54d-7044-40ae-8264-d7ada59d98bb" class="">
+</p><h2 id="4efdecc8-167f-433c-b17c-0b0d4097a70e" class=""><strong>Feuillets</strong></h2><figure id="1268ed8a-58c1-4f8d-b504-3488898e7a26" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26.html">RDV 001 | Pourquoi penser l&#x27;Agoravers ?</a></figure><figure id="fa73c6f9-5ef6-4f15-b45e-11f89f58965e" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e.html">RDV 002 | Mythologies et imaginaires partages</a></figure><figure id="d4d39ae2-bc0d-4292-8b60-00ba68d59481" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20003%20Pour%20un%20Agoravers%20afrocyberfeministe%20d4d39ae2bc0d42928b6000ba68d59481.html">RDV 003 | Pour un Agoravers afrocyberfeministe</a></figure><figure id="9b485d87-c9a9-454d-b27a-0afe8900ebd1" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1.html">RDV 004 | L&#x27;elasticite du temps dans l&#x27;Agoravers</a></figure><figure id="a120988e-13f5-4266-bdb1-66edda05f018" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20005%20E-sport%20circulaire%20de%20l&#x27;echappatoire%20a%20l&#x27;i%20a120988e13f54266bdb166edda05f018.html">RDV 005 | E-sport circulaire : de l&#x27;echappatoire a l&#x27;investissement</a></figure><figure id="d2d67f57-bef7-48ac-89a2-f6e70a505ee1" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20006%20L&#x27;Agoravers%20saharien,%20deserts%20numeriques%20e%20d2d67f57bef748ac89a2f6e70a505ee1.html">RDV 006 | L&#x27;Agoravers saharien, deserts numeriques et mers de sable</a></figure><figure id="67a3eefd-d273-4b0e-91e9-3969fbb61241" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241.html">RDV 007 | Reves, consciences et eveils a l&#x27;Internet des chichas</a></figure><figure id="d30ae828-e61f-414c-9e5a-e6dcaeb389e0" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0.html">RDV 008 &amp; 009 | Agora Jam</a></figure><figure id="31d916af-b881-40a2-bb09-bb439645fffc" class="link-to-page"><a href="Cahiers%20de%20l%E2%80%99Agoravers%20b95b72cad28243bdbbc4c2663cabff00/Les%2010%20principes%20de%20l%E2%80%99Agoravers%2031d916afb88140a2bb09bb439645fffc.html">Les 10 principes de l’Agoravers</a></figure></div></article></body></html>

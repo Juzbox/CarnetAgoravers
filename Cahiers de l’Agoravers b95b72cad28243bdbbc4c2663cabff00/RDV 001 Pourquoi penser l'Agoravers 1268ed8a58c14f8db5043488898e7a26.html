@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RDV 001 | Pourquoi penser l&#x27;Agoravers ?</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1268ed8a-58c1-4f8d-b504-3488898e7a26" class="page sans"><header><h1 class="page-title"><strong>RDV 001 | Pourquoi penser l&#x27;Agoravers ?</strong></h1></header><div class="page-body"><p id="09497934-6ded-4258-a8ae-327182a2bef5" class="">
+</p><h1 id="650db5fd-c237-4618-8eef-85a69290cc2a" class=""><strong>Carnet de l&#x27;Agoravers 001</strong></h1><p id="e369885f-6c93-42e6-885c-df17b870792b" class=""><a href="https://docs.google.com/presentation/d/12KA3U7LEKzyuxsxWnVF79BoZwLbMbhsuy4DTuZetElw/edit#slide=id.gee79e22655_0_13">DIAPOS DE LA PRES</a></p><p id="b5e62611-63a3-4bde-b074-3c687801e5a1" class="">
+</p><figure id="cd97cf7a-0597-4fd0-af19-189879157be9" class="image"><a href="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/001_AGORAVERSsmall.jpg"><img style="width:336px" src="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/001_AGORAVERSsmall.jpg"/></a></figure><p id="22c72780-1e32-42a1-8bb1-ffcd37c828d9" class="">
+</p><p id="f4bccda9-cbbf-407c-93a4-54fde832f2ab" class=""><strong>Premise</strong></p><p id="8d1a6b34-b7e9-49d7-9559-4d0dceba7b77" class="">Pour le lancement du cycle de l’Agoravers, nous avons proposé aux participant.e.s une réflexion sur ce à quoi pourrait ressembler la vie dans les métavers en les invitant a se balader dans différents jeux existants : GTA Online, Elder Scrolls, CORE, et Fortnite. Ces jeux, tous multi-joueurs, ont ete choisit pour leur propositions narratives, outils de création, et leur impact culturel dans l’oeuil publique.</p><p id="7dffbd6f-20c0-43e6-8c36-7620c689cb95" class="">
+</p><p id="33a4e0f8-67a6-4d56-919d-dc7687b0d7d0" class="">A l&#x27;aide d&#x27;une série de questions et d&#x27;activités simples comme &quot;Mettez-vous dans un coin et observez ce qui se passe devant vous pendant une minute,&quot; les participant.e.s ont pu &quot;étudier&quot; la vie dans les premiers germes de métavers. </p><p id="43fe5631-012c-4067-968c-808f3956fec7" class="">
+</p><p id="9d8ab661-1175-43a4-8862-f500ddc86af9" class="">
+</p><p id="06dd6276-211c-4b50-8fcf-b3e76f8f2ea1" class=""><strong>Retour d’expérience</strong></p><p id="2e8febe8-9ab5-4c17-84f3-865994ce035e" class="">Les participant.e.s avaient 20min par jeu, pour pouvoir visiter différents mondes avant de faire part au groupe de leur ressenti. Toute experience numerique necessitant un temps de prise en main, ce format de speed-dating a ete un peu frustrant pour certain, ne laissant pas assez de temps pour vraiment plonger dans les mondes ou leurs histoires. Mais les observations sont tres interessantes car elles tangibilisent les questions d’usage et d’imaginaires propre a la création des métavers. </p><p id="94530247-ed15-40e3-9a71-da394b387730" class="">
+</p><figure id="fef8ae8c-46a5-48d5-8ecb-31f5deeb96c7" class="image"><a href="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/20210911_155850.jpg"><img style="width:432px" src="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/20210911_155850.jpg"/></a></figure><p id="987ad7c4-3cac-4126-9902-ac2a399831d0" class="">
+</p><figure id="bd6f0877-7e18-4090-97c9-8b682c14aa1b" class="image"><a href="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/20210911_172532.jpg"><img style="width:432px" src="RDV%20001%20Pourquoi%20penser%20l&#x27;Agoravers%201268ed8a58c14f8db5043488898e7a26/20210911_172532.jpg"/></a></figure><p id="debe294f-ae5e-48af-a10e-d4218c083429" class="">
+</p><p id="1c9f7b3a-f2f4-41a4-9eef-4bde896be1e5" class="">En fin d’atelier nous nous sommes retrouves autour d’une feuille vierge pour esquisser les formes possibles de l’Agoravers depuis chacun de ces jeux. Ces discussions nous ont servi d’aiguillage pour préparer les dates suivantes.</p><p id="d94db24b-9f7d-4e21-a7ca-06f9a1e6a45c" class="">
+</p><ul id="13ac79b7-45e9-485a-8483-ffb8fd7cd5d9" class="toggle"><li><details open=""><summary><em>JEU 1 | </em><a href="https://www.rockstargames.com/gta-online"><em>Grand Theft Auto Online</em></a></summary><p id="fbcf08ae-29d5-4fe5-8d98-886b97a6542a" class="">Grand Theft Auto: Online (plus communément abrégé GTA Online) est un jeu vidéo d&#x27;action-aventure multijoueur proposant un monde persistant basé sur le gameplay et l&#x27;univers de Grand Theft Auto V mais en ajoutant des éléments de RPG.</p><p id="5d97e2ad-ffe0-4dcd-aaa7-66f9f9102c22" class="">
+</p><p id="c2cdf8cd-c581-4405-9f04-8fd46c90af38" class="">Vous débarquez à Los Santos après avoir rencontré Lamar Davis, personnage récurrent de Grand Theft Auto 5, sur Lifeinvader (parodie de Facebook). Ce dernier vous accueille à l’aéroport et vous met par la suite en contact avec l&#x27;un de ses compagnons d&#x27;armes du gang des &quot;Familles de Los Santos&quot; (The Famillies en version originale) prénommé Gerald. Celui-ci vous donne vos premières missions afin de faire vos gammes dans le milieu du crime et c&#x27;est ainsi que le personnage que vous incarnez dans ce jeu mettra un pied définitivement dans la pègre de Los Santos et sa région.</p><p id="d3eab12f-9027-492a-b08a-b0a5c2605027" class="">
+</p><figure id="ccb6d153-bef0-4df8-b23f-dee97c13368f" class="image"><a href="https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/7/79/GTA-Online.jpg?width=960"><img style="width:768px" src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/7/79/GTA-Online.jpg?width=960"/></a></figure><p id="ef3c42d1-7cef-48ec-b225-a85b5df48d76" class="">
+</p><p id="3a57626a-900a-4a21-8fad-0b244fb2b580" class=""><span style="border-bottom:0.05em solid">Interface</span></p><ul id="0de59a8a-f214-4992-bbe4-8cfcab7e4cae" class="bulleted-list"><li style="list-style-type:disc">On était informé à distance des activités ou proximités d&#x27;autres joueurs</li></ul><ul id="bf56b43b-4fec-4450-a9d1-3d7b5b3bc59b" class="bulleted-list"><li style="list-style-type:disc">Propose un univers très réaliste mais difficile à faire évoluer avec son personnage</li></ul><ul id="96600301-4555-4331-984b-0ee72b025888" class="bulleted-list"><li style="list-style-type:disc">Le téléphone/ commandes et l’affichage des missions sont pratiques</li></ul><ul id="155642ba-d675-4a6b-8771-c77287d8951e" class="bulleted-list"><li style="list-style-type:disc">Peut-il y avoir des moments de défi pour toute la carte?</li></ul><ul id="6c9a9544-aed6-442f-9098-870c24fac7eb" class="bulleted-list"><li style="list-style-type:disc">Les vibrations de la manette donnent un sentiment d&#x27;urgence IRL</li></ul><p id="d79fbe8c-eae0-4b26-a5e7-fff23e4707e7" class="">
+</p><p id="720f076e-5d1b-410a-ae84-505670e96e7f" class=""><span style="border-bottom:0.05em solid">Fiction &amp; Réalité</span> </p><ul id="318a4464-5c66-4b13-bdb5-fec620e6d78e" class="bulleted-list"><li style="list-style-type:disc">L&#x27;expérience de jeu est limitante mais rend l&#x27;expérience authentique. Autre observation, la résistance de la vie du perso est surhumaine</li></ul><ul id="e9027284-47f4-49b8-bd34-737cfe94e929" class="bulleted-list"><li style="list-style-type:disc">Nous sommes sur de la physique newtonienne (c’est-à-dire obsolète ?)</li></ul><ul id="46f37d69-1cb4-4c62-9a85-a92018f1e153" class="bulleted-list"><li style="list-style-type:disc">Ton personnage a déjà un passé et une identité déterminé au début mais après, on fait ce qu&#x27;on veut...</li></ul><p id="2c4bb301-33e1-42db-8425-e13f4f8cb527" class="">
+</p><p id="f39d38ca-61d3-40ac-9736-431f3c5de030" class=""><span style="border-bottom:0.05em solid">Expérience</span></p><ul id="e9f4562e-924c-4070-ac3c-727a9a697577" class="bulleted-list"><li style="list-style-type:disc">Univers connoté marginalité (gang, hood americain)</li></ul><ul id="c79bc336-3ddf-4725-be13-c2bb091c8922" class="bulleted-list"><li style="list-style-type:disc">L&#x27;union de tous les joueurs est-elle possible?</li></ul><ul id="96a08851-af81-4ae0-9594-ba3469fafb7f" class="bulleted-list"><li style="list-style-type:disc">A quel moment on se rencontre ?</li></ul><ul id="7e13ff9d-0b7a-4ae5-9446-6c2ccad23917" class="bulleted-list"><li style="list-style-type:disc">La flexibilité du gameplay permet de suivre ses envies, respecter (ou non) tous les codes de la route.</li></ul><p id="ffd0247c-6144-4a4b-a135-83712a01877a" class="">
+</p></details></li></ul><ul id="4a60084d-4562-4619-bd14-ac6673db7fee" class="toggle"><li><details open=""><summary><em>JEU 2 | </em><a href="https://www.elderscrollsonline.com/en-us/home"><em>Elder Scrolls Online</em></a></summary><p id="19939b34-9227-4e4d-bd45-7e2df21beea4" class="">
+</p><p id="20472cf5-23fb-4888-abd4-4b0d0082ce05" class="">The Elder Scrolls Online (ESO) est un jeu vidéo de rôle en ligne massivement multijoueur développé par ZeniMax Online Studios.</p><p id="90e9cee0-44d3-4934-bb45-2f2ab76e3262" class="">Tout comme pour les autres opus de la franchise, le jeu propose d&#x27;évoluer sur le continent de Tamriel, ainsi qu&#x27;une histoire sans lien avec les autres titres. L&#x27;action se déroule un millénaire avant les événements du précédent titre de la série, Skyrim, alors que le prince daedrique Molag Bal fait régner le mal sur tout Tamriel et s&#x27;impose comme le principal antagoniste.</p><p id="123772e8-6c65-469f-8e2f-e3ccaac7fdc3" class="">L&#x27;histoire du jeu est centrée sur la Guerre des Alliances. Il est ainsi possible de rejoindre l&#x27;une des neuf races réparties parmi les trois factions se disputant le contrôle de Tamriel, qui sont :<div class="indented"><ul id="6f76c40d-26eb-4444-ba60-54bc19e2028f" class="bulleted-list"><li style="list-style-type:disc">l&#x27;Alliance de Daguefilante : Brétons, Orques et Rougegardes</li></ul><ul id="0cc1e818-bbd9-4973-8d4f-d914523a9451" class="bulleted-list"><li style="list-style-type:disc">Pacte de Cœurébène : Elfes Noirs, Argoniens et Nordiques</li></ul><ul id="08528750-8c37-41f7-942e-1aa3f5a28387" class="bulleted-list"><li style="list-style-type:disc">Domaine Aldmeri : Hauts-Elfes, Elfes des Bois et Khajiits</li></ul><p id="a0589b92-8d1c-4c7c-81c0-57c3dc66c4ad" class="">
+</p></div></p><figure id="9e75c2b4-a576-47b8-993c-969b0db3104b" class="image"><a href="https://cdn.mos.cms.futurecdn.net/ZGf9z8TSPbrbkdVD8ZUPWH-1024-80.jpg.webp"><img src="https://cdn.mos.cms.futurecdn.net/ZGf9z8TSPbrbkdVD8ZUPWH-1024-80.jpg.webp"/></a></figure><ul id="bebca8d0-608c-4dc8-ad1a-d324a8f3b180" class="bulleted-list"><li style="list-style-type:disc">Basé sur le mouvement et l&#x27;exploration</li></ul><ul id="06c1e30d-3dba-462e-8bd0-d37f4efd2e8f" class="bulleted-list"><li style="list-style-type:disc">Consignes distribuées au fur et à mesure par les personnages</li></ul><ul id="175375d1-a12b-4604-8a16-cccb62ac26e8" class="bulleted-list"><li style="list-style-type:disc">Aventure à construire dans un univers imposé</li></ul><ul id="a6529770-6e5e-45ab-b71a-8fd2931c0205" class="bulleted-list"><li style="list-style-type:disc">La quête/mission apporte une structure au monde mais seul dans notre quête... Pas de travail d&#x27;équipe ?...Pas de carte/boussole</li></ul><ul id="02a33c71-c3f4-4bb4-b227-8b473335f7ca" class="bulleted-list"><li style="list-style-type:disc">Univers médiéval fantastique</li></ul><ul id="1fdc89a8-341b-4739-b390-70d7d5303c61" class="bulleted-list"><li style="list-style-type:disc">Des lieux sont bloqués</li></ul><ul id="8e76c935-ff39-4ee9-b7e3-c758cf3d43d2" class="bulleted-list"><li style="list-style-type:disc">La guérisseuse pas de personnalité, sert a nous proteger</li></ul><ul id="28965fcd-53a6-427c-897a-6c49d69f212a" class="bulleted-list"><li style="list-style-type:disc">Type d&#x27;objets à récolter armure/arme/collecte</li></ul><ul id="cc5c326a-3d84-4ccd-a83f-99aed6141132" class="bulleted-list"><li style="list-style-type:disc">Notre personnage est un guerrier arme d&#x27;une épée hostile aux autres personnage dont un guerrier statue et un tigre..</li></ul></details></li></ul><ul id="03813dd1-eb18-4f0a-9e62-42c1edd0ea7a" class="toggle"><li><details open=""><summary><em>JEU 3 | </em><a href="https://www.epicgames.com/fortnite/en-US/home"><em>Fortnite</em></a><em> (Mode créatif)</em></summary><p id="7fb10751-8c01-4f51-a758-01d3d5f01c7f" class="">Fortnite Créatif est un mode de jeu de type sandbox disponible dans Fortnite développé et publié par Epic Games.</p><p id="2701b732-1dbe-4ca7-b884-84c1f0ce7451" class="">
+</p><p id="33499cf3-9e78-4747-aaa7-ba9d71f5f131" class="">Dans ce mode jeu, les joueurs peuvent créer des structures sur une île privée et les partager avec un maximum de seize joueurs (y compris le propriétaire) pour divers modes de jeu multijoueur avec des règles personnalisables.</p><p id="d0558138-5108-490b-891b-dc721ec8153d" class="">Les joueurs peuvent y placer, déplacer et effacer des objets, y compris des structures, des objets et des fonctionnalités de jeu.</p><p id="6273023b-56e2-4923-b220-75d296896bf4" class="">Quand le mode de jeu est lancé, le joueur atterrit sur l&#x27;île « Accueil », d&#x27;où il peut se rendre sur ses propres îles, sur les îles des autres joueurs de son groupe, sur les îles de créateurs mises en avant ou, enfin, sur celles d&#x27;autres créateurs, auxquelles ils peuvent accéder en entrant un code.</p><p id="88c3829a-b556-4e51-aa7e-eb601b7d94df" class="">
+</p><figure id="2dca9be3-cd2d-4bc3-adcf-2486ce3952e7" class="image"><a href="https://www.nme.com/wp-content/uploads/2021/06/fortnite-chapter-2-season-7-alien-invasion-key-art-1392x884.jpg"><img src="https://www.nme.com/wp-content/uploads/2021/06/fortnite-chapter-2-season-7-alien-invasion-key-art-1392x884.jpg"/></a></figure><p id="ba0c8760-7f87-4e09-a7d5-60cdae31ae13" class="">
+</p><ul id="faccaedd-823e-4916-b6af-3b645658eb0a" class="bulleted-list"><li style="list-style-type:disc">Il est agréable de pouvoir y voler</li></ul><ul id="9d1bb5a9-d64f-4565-a365-1c194537e1e7" class="bulleted-list"><li style="list-style-type:disc">Surpris par les dimensions de l&#x27;espace</li></ul><ul id="045f3829-1a49-4e33-97e6-f17dc8e734b2" class="bulleted-list"><li style="list-style-type:disc">Il semble possible de créer un monde infini avec des portes et ne plus en sortir comme Alice au pays des merveilles.</li></ul><ul id="8a1499ef-000d-4add-9c5a-dca3892718d1" class="bulleted-list"><li style="list-style-type:disc">Vide / éphémère / mouvement / liberté mais avec l&#x27;illusion car un territoire limité</li></ul><ul id="29a89ff6-3e22-44ec-ade2-37ad5fb36f40" class="bulleted-list"><li style="list-style-type:disc">Culture et outils, personnages sont assez stéréotypée, peu de diversité culturelle...</li></ul><p id="1c66778f-f543-4510-81b7-56aae34f9817" class="">
+</p></details></li></ul><ul id="ebf00068-fb22-404c-be3c-86d7f752bd1d" class="toggle"><li><details open=""><summary><em>JEU 4 | </em><a href="https://www.epicgames.com/store/en-US/p/core"><em>CORE</em></a></summary><p id="6c8a5c52-611a-4205-bb2d-daf89bbdab2f" class="">Core est un jeu vidéo en ligne free-to-play avec un système de création de jeu intégré, développé par Manticore Games et conçu avec l&#x27;Unreal Engine 4. Il a été publié en version alpha ouverte le 16 mars 2020, et il est devenu disponible en accès anticipé le 15 avril 20211. Core héberge des jeux générés par les utilisateurs et conçus pour un public de grands adolescents et d&#x27;adultes.2,3 Le système de création de jeux est accessible afin de permettre au plus grand nombre de personnes de l&#x27;utiliser3. Core repose sur un concept similaire à d&#x27;autres plateformes comme Roblox2. Il est disponible gratuitement sur l&#x27;Epic Games Store. Le jeu possède plus de 25 000 mini-jeu créer par la communauté.</p><p id="3774df9d-ccbf-4ab2-8557-6b5c7a479a14" class="">
+</p><figure id="a82c7ff6-8a11-40fc-8c11-08670086c34e" class="image"><a href="https://i.ytimg.com/vi/mavcVGT49TU/maxresdefault.jpg"><img src="https://i.ytimg.com/vi/mavcVGT49TU/maxresdefault.jpg"/></a></figure><ul id="0aa59815-0053-4c1b-8786-2ff3cfc07040" class="bulleted-list"><li style="list-style-type:disc">Stéréotypes communs du gaming, nature médiéval, corps féminisés, porte qui ne permet de faire passer qu&#x27;un type de personnage</li></ul><ul id="323af3f6-207e-48aa-bb88-f52a86939170" class="bulleted-list"><li style="list-style-type:disc">Quelques bugs pas toujours clairs sur les objectifs directifs</li></ul><ul id="7e4066e5-9e98-47bc-b3c4-e4e6728f4d07" class="bulleted-list"><li style="list-style-type:disc">Connexion aux autres création sur un support existant</li></ul><ul id="27fb7abe-5f70-443a-ade5-66e0355e108b" class="bulleted-list"><li style="list-style-type:disc">Imaginaire de ready Player One, autre joueur incarne des personnages possibilité de découvrir leur profil</li></ul><ul id="74f5baa7-cae2-4b35-8dfc-fc796bb175c0" class="bulleted-list"><li style="list-style-type:disc">Le système de Portails propose un univers continue</li></ul><ul id="8b4ae362-1999-4ddc-ba3d-a3d0e4e2a7cb" class="bulleted-list"><li style="list-style-type:disc">Possibilité de choisir le type d&#x27;univers souhaité, friendly moteur</li></ul></details></li></ul><p id="212c9d54-0b33-4060-9085-114c7428b12d" class="">
+</p><p id="9fb85882-9689-466d-9b25-26198e8b4143" class="">
+</p><p id="0671d38f-ed7a-411c-ba8f-502d70053c43" class=""><strong>Propositions pour l’Agoravers?</strong></p><ul id="926202f8-2ae7-4169-ad0c-a2332e1603d6" class="toggle"><li><details open=""><summary>I. <span style="border-bottom:0.05em solid">Points d’entrée dans l’Agoravers</span></summary><p id="edc98e01-702b-492a-8a1c-581705a8185f" class="">A la fin de l&#x27;atelier, se basant sur les notes collectees au long des immersions numériques, les participant.e.s durent proposer des &quot;portails&quot; vers l&#x27;Agoravers, ou se trouveraient-ils? A quoi 
+ressembleraient-ils?</p><ul id="19b58be2-5413-406f-9ca7-cb096da903ed" class="bulleted-list"><li style="list-style-type:disc">Portail dans un livre</li></ul><ul id="eed7cdaa-41a9-49d2-a520-f48e8dce4e50" class="bulleted-list"><li style="list-style-type:disc">Des sneakers dans un magasin servent de portail</li></ul><ul id="aaa8a8f7-eff3-45b3-b55d-523a5ef3c84d" class="bulleted-list"><li style="list-style-type:disc">Un portail qui permet de bouleverser le déterminisme du passé vécu</li></ul><ul id="192fab89-f24c-4c01-ba92-3ed0c8c21550" class="bulleted-list"><li style="list-style-type:disc">Un portail comme corps virtuel type de réincarnation</li></ul><ul id="8e9acc98-650d-4e96-8d98-46dcee01b0ed" class="bulleted-list"><li style="list-style-type:disc">Un portail vers les multivers assis sur une cage de football</li></ul><ul id="a315ed0d-8ee6-46cf-b88c-1ea8842a33ef" class="bulleted-list"><li style="list-style-type:disc">Un portail avec des serrures paramétriques qui transforment le
+monde auquel elles donnent accès en fonction de la personne qui l&#x27;ouvre</li></ul><ul id="efc41e8b-6169-4879-9f28-2b351c30837c" class="bulleted-list"><li style="list-style-type:disc">Un portail, univers en expansion, des univers s&#x27;ajoute à l&#x27;infini et on choisit la destination</li></ul></details></li></ul><ul id="7fbdd9c1-87fd-4f92-9ea4-6d35590745d2" class="toggle"><li><details open=""><summary>II. <span style="border-bottom:0.05em solid">Agoravers pour sortir de soi</span></summary><ol type="1" id="47d5c207-ec78-42e7-b171-dfdc4695514d" class="numbered-list" start="1"><li>Et si des lunettes hypersensibilité permettrait de voir le monde réel de manière plus inclusive. Perception polysensoriel et inclusif?</li></ol><ol type="1" id="3fe7fc2b-af64-4567-9714-17ba0bb235f9" class="numbered-list" start="2"><li>Et c&#x27;est l&#x27;Agoravers et un monde multisensoriel sans que le visuel soit premier sonore olfactif toucher possibilité de choisir le sens. On a la possibilité de choisir avec quel type de sens on peut explorer ce monde selon les envies de la personne pour aller toucher d&#x27;autres publiques. Explorer le monde pour ne pas seulement être dans le visuel. Parametrer le monde pour voir le monde comme une mouche, chien. L&#x27;oeil humain n&#x27;a pas la capacité de tout observer, avoir accès à d&#x27;autres sens. Monde anthropocentrique.</li></ol><ol type="1" id="7baf7a7b-a01a-4842-a6b0-7d7052d8f0b9" class="numbered-list" start="3"><li>Et si l&#x27;Agoravers était un lieu d&#x27;apprentissage d&#x27;une langue universelle pour tous les êtres vivants à chacun son interface. Imaginer une langue transespeces. Des interfaces plus dédié à la construction, à la communication ou à la narration. Nous pouvons fabriquer notre
+interface/interface prescrite.</li></ol><p id="9abbd248-0914-4656-b3f5-3479f737971a" class="">
+</p></details></li></ul><ul id="0d8a4b61-f18e-4a09-84d4-1918df7b1159" class="toggle"><li><details open=""><summary>III. <span style="border-bottom:0.05em solid">Agoravers comme monde vivant autonome</span></summary><ol type="1" id="dfc4b81d-0eab-4114-8a63-1705e2d3d841" class="numbered-list" start="1"><li>Et s&#x27;il est si l&#x27;Agoravers était d&#x27;un monde organique évolutif plus interactif et autonome, il a sa propre vie. Une foret vierge avec laquelle interagir qui à lui même sa propre vie.
+</li></ol></details></li></ul><ul id="07321ddd-0d6e-4a36-89be-87cfbc8a8d7a" class="toggle"><li><details open=""><summary>IV. <span style="border-bottom:0.05em solid">Agoravers un havre numérique</span></summary><ol type="1" id="5480ed33-a5ff-439b-b5ab-ba2eca86fdd9" class="numbered-list" start="1"><li>Pas de détails</li></ol></details></li></ul><ul id="be7aa738-2d40-4147-b4cf-f639e5c7aeb4" class="toggle"><li><details open=""><summary>V. <span style="border-bottom:0.05em solid">Agoravers comme un espace dédié a la création</span></summary><ol type="1" id="0ab643e6-ce1e-4913-8c75-c997c5b19e96" class="numbered-list" start="1"><li>Et si la magie permettait de construire ton univers réel. Utiliser GTA pour transformer ton quartier et imaginer des choses dans le réel?</li></ol><ol type="1" id="151be218-5842-4803-992a-c6896f718cdf" class="numbered-list" start="2"><li>Et si un metavers partait d&#x27;une très forte contrainte dans lequel on ouvrirait peut à peu des espaces de liberté non stéréotypé femme/homme présent dans CORE. Un mélange de core/GTA. Fluidité des univers core + contrainte de GTA</li></ol><ol type="1" id="ca13e291-8e45-460c-b90e-35188ee063c3" class="numbered-list" start="3"><li>Et si l&#x27;Agoravers c&#x27;était la tour de Babel, culture passion, différents langages, un immeuble regroupant la diversité du monde. Qu&#x27;est-ce qui se passe quand plusieurs trucs convergent puissent être moduler et construit et agissait sur l&#x27;individu. Bac à sable tour de babel. Construire un espace pour que ca se passe bien</li></ol><ol type="1" id="3be0db9c-6416-403a-9660-51de341ca3a6" class="numbered-list" start="4"><li>Et si l&#x27;Agoravers etait un espace de création artistique participatif collaboratif, un moment de production en opposition à Elder scroll?</li></ol></details></li></ul><p id="7cf941b6-688f-4588-b8b8-bb16b9f6fa6a" class="">
+</p></div></article></body></html>

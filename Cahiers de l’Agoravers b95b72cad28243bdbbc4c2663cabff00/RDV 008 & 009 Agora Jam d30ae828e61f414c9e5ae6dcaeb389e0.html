@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RDV 008 &amp; 009 | Agora Jam</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d30ae828-e61f-414c-9e5a-e6dcaeb389e0" class="page sans"><header><h1 class="page-title"><strong>RDV 008 &amp; 009 | Agora Jam</strong></h1></header><div class="page-body"><p id="f24a33d1-2974-4f96-86eb-d0038a79edb0" class="">
+</p><h1 id="890f8efa-e731-42f9-961a-5d9c85f5eedc" class=""><strong>Carnet de l&#x27;Agoravers 008</strong></h1><p id="b83624f9-c982-4868-8b52-220585fd85d2" class=""><a href="https://docs.google.com/presentation/d/1iO1I2Tlug-uRk-6-Pv--dGXT3HNoZbNupN1fTBhUxbk/edit">DIAPOS DE LA PRES</a></p><p id="4ead3117-1e85-4f15-8b87-df981aa468be" class="">
+</p><p id="552868ed-1eb3-4f25-835e-1ef07ce27156" class="">
+</p><figure id="fe2b721e-e565-4f5d-8752-4d9e591c61a4" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/QGvisual.png"><img style="width:432px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/QGvisual.png"/></a></figure><figure id="81d69137-1452-408d-8a98-f214e093ef26" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_155932.jpg"><img style="width:432px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_155932.jpg"/></a></figure><figure id="8450ea7f-77fe-4e51-9735-ba0c66ed1fce" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_155710.jpg"><img style="width:432px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_155710.jpg"/></a></figure><figure id="91a4913c-9308-4db3-973b-ec6d4102ad6d" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_183047.jpg"><img style="width:432px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/20220507_183047.jpg"/></a></figure><p id="b6fa321b-364c-4b6c-9c81-e8583210875a" class="">
+</p><p id="590be57c-9183-4dec-a599-15570404a4eb" class="">
+</p><p id="989f44e3-4f70-4c35-ad94-e232e3e123a8" class=""><strong>Format de l’Agora Jam:</strong></p><p id="43ebf2de-2982-4795-9506-9e4e8b67216a" class="">L’Agora Jam a donné vie au premier prototype de l’Agoravers, un métavers alternatif qui chamboule la perception et le quotidien du bendo souhaitant transcender les mises en périphérie de tous types. Cette rencontre s’est deroulee sur deux samedi apres-midi, a un mois d’ecart.</p><p id="8e630153-84a6-436a-bebd-02f28f1dc986" class="">
+</p><p id="31b8237b-4ac1-4da7-ad1d-0fe1b6de05e1" class="">Pour cette exercice, la Banlieue du Turfu a proposé un archipel de <a href="https://miro.com/app/board/uXjVOJKPZmk=/">cinq lieux inspirés</a> par les conversations qui ont émergé au fil des sept ateliers Agoravers organisées depuis septembre 2021 à La Gaité Lyrique.</p><p id="cf1b604b-5d5a-4b67-83dd-e6bd7614c11d" class="">
+</p><figure id="7c5fc2af-6e23-4335-ac58-ee1abeb39d9d" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/Untitled.png"><img style="width:1153px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/Untitled.png"/></a></figure><p id="e4f71431-67a3-43b4-957e-9732f1aaecef" class="">
+</p><p id="525a53b0-439e-4f51-a0bb-7b81c8100d11" class="">C&#x27;était l’occasion de s&#x27;éloigner des rendus virtuels trop propres et parler sports alternatifs, argot turfuriste et la renaissance par le language, le pixel comme matière intelligente et autonome, la chicha comme repository GitHub, ou même la poésie de la rivière du savoir et ses courant sombres parfois effrayants.</p><p id="52cd5b9e-4221-4ddf-a959-44af23b798ce" class="">
+</p><p id="36ea9d96-bdff-4a65-8ba6-cc692b221e5b" class="">Je vous laisse découvrir ces mondes poétiques et joueurs prototypés dans <a href="http://wondavr.com/">Wonda</a>.</p><p id="69c4a3ac-c3a3-49ed-b085-21ea4c69797f" class="">
+</p><h2 id="09ac0336-f956-4c77-9879-199bb48a5955" class="">Agoravers V.0</h2><ul id="24ea7bfa-8268-4e7a-9c1e-1366bfde0c9b" class="toggle"><li><details open=""><summary><strong>✨ La Forge du Pix.Sable</strong></summary><ul id="f29e46fe-f0cf-4a5c-85d8-0ea896221d38" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Brief artistique donné au participant.e.s</span></summary><p id="d3969e8f-1802-483d-be20-f481b611dee8" class=""><em>Le pix.sable</em> est une matière turfuriste à la fois physique et numérique. Au fil des siècles, différentes formes d&#x27;artisanat ont émergé autour de sa fusion, fission, et autres transformations.</p><p id="d3e79920-fd64-41bc-b673-b4687572a95d" class="">La Forge du Pix.Sable est un lieu dédié à la manipulation du pix.sable que ce soit par la pensée, le chant, ou par le biais d&#x27;outils numériques. Tout l&#x27;Agoravers est construit dans cette matière et sa maintenance dépend de sa gestion et de sa consommation respectueuse.<div class="indented"><p id="0b1523e4-013f-48ea-91bc-6b0b9defb1a1" class="">
+</p><p id="43d3a428-dbc8-4abc-8f46-bddf3787dbd2" class=""><span style="border-bottom:0.05em solid">Origine:</span></p><p id="42f89d36-49c3-4fca-8212-c2571afa06c4" class="">La proposition du pix.sable était au coeur de l&#x27;atelier &quot;RDV 006 | L&#x27;Agoravers saharien, déserts numériques et mers de sable&quot; ou nous avons essayé de mettre en valeur, entre autre, l&#x27;innovation low-tech, et la fabrication d&#x27;objets par la télépathie; comme si le numérique s&#x27;invitait dans le physique et l&#x27;inverse.</p><p id="ef0e6c9b-ad50-4ab0-9481-d668698758ec" class=""><span style="border-bottom:0.05em solid">A définir:</span></p><ul id="f0096230-3450-4590-a8ec-165d991ef056" class="bulleted-list"><li style="list-style-type:disc">Quelle place pour la création dans l&#x27;Agoravers de demain?</li></ul><ul id="ddfb2d03-9bb2-4b42-998f-a904d08e88d4" class="bulleted-list"><li style="list-style-type:disc">Les créations pix.sableuses, pourront-elles être détournées et hackées librement dans l&#x27;Agoravers?</li></ul><ul id="f5d39368-256d-4d5f-b1d3-71b0bb99fe65" class="bulleted-list"><li style="list-style-type:disc">Comment la Forge du pix.sable peut-il contribuer à l&#x27;effervescence des autres lieux de l&#x27;Agoravers?</li></ul></div></p></details></li></ul><ul id="ba0ac9d3-273f-4276-8a9d-21a47aa1b180" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Equipe</span></summary><p id="2181c6ef-197e-4925-891a-fa6c14cdbd6d" class=""><a href="https://www.linkedin.com/in/riwad-salim-a5840282/">Riwad</a>
+<a href="http://instagram.com/babouches.iridescentes/">Inès</a>
+<a href="https://www.linkedin.com/in/st%C3%A9phane-cr%C3%A9tel-b364b931/">Stéphane</a></p></details></li></ul><p id="6171a75e-2a9c-4591-ac8f-06f5cf9ae5ab" class=""><div class="indented"><p id="89e042ba-67ec-4e0e-9fb8-0b61ce41b75d" class=""><span style="border-bottom:0.05em solid">Création:</span> Né dans les ruines des salles de serveurs de l’Anthropocène, de la transmutation de matières et d’énergies anciennes, le pix.sable demeure autonome et n’envisage la forme qu’il prendra que par interprétation des émotions des êtres vivants avec qui il interagit.</p></div></p><p id="a6e4fd7f-0798-4f82-b464-4239a46bed2e" class="">
+</p><figure id="d1539999-39a2-45c5-9c4c-8a53678ab1d0" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(2).png"><img style="width:672px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(2).png"/></a></figure><p id="ea440f8e-35a9-48cf-ba4b-1f0e29ff3607" class="">
+</p></details></li></ul><ul id="28ef2093-2abc-4cd8-bdee-d7f5eb363518" class="toggle"><li><details open=""><summary>🧼<strong> La Bayt-al-hikma</strong></summary><ul id="d1ab1ccc-4a74-4d74-8848-78f1c1ad8cd6" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Brief artistique donné au participant.e.s</span></summary><p id="d8e7bd37-ab50-4903-9301-aaea18ec54cc" class="">La <em>Maison de la sagesse (Bayt al Hikma)</em> est un centre de réalité-fiction (fabrication de réalité par la fiction) dans lequel le savoir, la recherche, la traduction permettent de transcender les aprioris. C’est une université polymorphe dans laquelle on traduit des ouvrages contemporains et anciens en argot turfurique. L’objectif premier de la maison de la sagesse est de favoriser par son langage l’accessibilité des savoirs aux quartiers. Les efforts de traductions s&#x27;accompagnent de réflexions, de commentaires, et ont donné lieu à une nouvelle forme de littérature, le <em>turfurisme.</em><div class="indented"><p id="389dd164-c0da-43d8-ba02-0ee4fad1d7f7" class=""><span style="border-bottom:0.05em solid">Origine:</span></p><p id="22859a51-9740-4f02-8a2d-1ad9dc86128b" class="">C’est une proposition que nous retrouvons dans l’ouvrage la Banlieue du turfu dans lequel est évoqué couramment son rôle majeur dans la <em>transmission de l&#x27;héritage des civilisations.</em> Elle symbolise également différents âges d&#x27;or de l’humanité dont nous pouvons être les nouveaux acteurs. Les rencontres et d’échanges réalisés à la Gaîté Lyrique ces sept derniers mois, où l’on vient se recueillir avec ses amis, là où les philosophes, archéologues, mathématiciens, politiciens, géographes, artistes et astronomes pourront s’embarquer dans l’aventure merveilleuse, était quelque part une Bayt al Hikma.</p><p id="0cca9150-be63-491e-81f1-fe94c625c670" class=""><span style="border-bottom:0.05em solid">A définir:</span></p><ul id="bb3778b3-4adc-437c-81a1-aac6760c9b3f" class="bulleted-list"><li style="list-style-type:disc">Quelle place pour le savoir, les sciences et la recherche dans le Métavers ?</li></ul><ul id="052230a1-fc80-43c7-b783-cdf5fc80836f" class="bulleted-list"><li style="list-style-type:disc">La maison de la sagesse modifie-t-elle notre rapport au savoir ?</li></ul><ul id="4375f7d3-67fc-4c6d-9d7c-371e0307dce7" class="bulleted-list"><li style="list-style-type:disc">Quelles sont les singularités dans le Métavers ?</li></ul></div></p></details></li></ul><ul id="cb985aa9-47a8-4c93-8274-d23c92a16732" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Equipe</span></summary><p id="dd4e303a-61f7-4746-ae37-289fd5a3e983" class=""><a href="http://www.michaelbaumgarten.com">Michael</a>
+<a href="https://www.linkedin.com/in/anifa-chanfiou-b68a25232/">Anifa</a>
+<a href="http://instagram.com/syncretical">Syncretical</a></p><p id="cb5398a7-7b89-4f4f-ae8d-fca8b39bf034" class=""><a href="https://www.linkedin.com/in/dji-ming-luk-2358137/">Dji Ming</a></p></details></li></ul><p id="10ef1b4a-1675-4c35-b561-dc3fe61e9d4c" class=""><div class="indented"><p id="f6bc4960-52ee-45b3-8715-38c161617c05" class=""><span style="border-bottom:0.05em solid">Création:</span> La Bayt-al-hikma entre dans le code du multirêves, car il est le passeur vers la concrétisation du rêve. Il se matérialise dans un espace aqueux et sans angle ou l&#x27;argot se noue dans une atmosphère lumineuse et colorée. La Bayt-al-hikma nous permet de devenir alors un.e grand.e mage-sage des banlieues intergalactiques.</p></div></p><p id="dd698e4c-7112-440f-8caf-d3fca60bedca" class="">
+</p><figure id="6c33d25a-8e37-45cd-a99f-d29ed6282b21" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(6).png"><img style="width:1908px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(6).png"/></a></figure><p id="d083d01c-8ffc-4ad3-ab30-45cbf2e5c016" class="">
+</p><p id="29e9523f-968e-4640-9db4-2224d48852bb" class="">
+</p></details></li></ul><ul id="a51aa3f0-a677-490b-a49d-2bf299710a0b" class="toggle"><li><details open=""><summary>🔗 <strong>L&#x27;Internet des Chichas</strong></summary><ul id="d4b6d644-34c7-4a29-963e-fede29747a1b" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Brief artistique donné au participant.e.s</span></summary><p id="f4942e9b-69ca-4c9f-bd21-568813ad5376" class="">L’Internet des Chichas est un espace démocratique administré par des maître.esse.s de cérémonie en comité intime et décentralisé pour imaginer et débattre ensemble des prochaines politiques de l’Agoravers. Que vous pratiquiez la chicha ou non, elle est avant tout une culture des retrouvailles.</p><p id="09b7de2e-6c75-4842-aaad-bbd2c09531fe" class="">Dans l’Agoravers, l’Internet des Chichas inspire de nouvelles postures pour concevoir nos ambitions citoyennes. Le fumet qui se dégage de ses pipes, n&#x27;est pas simplement de la vapeur, mais une médecine douce à base de plantes facilitant les flashs télépathiques. Ainsi, en entrant dans la chicha naturellement, les habitant.e.s de l’Agoravers se sentent plus apaisé.e.s avant d&#x27;entamer des questions assez houleuses concernant son avenir. Chaque chichas instituées peuvent présenter leurs engagements, des créations, des propositions qu’elles souhaitent proposer à la société turfuriste. On y invente des outils numériques et des outils pédagogiques.</p><p id="aaf36187-fafa-4662-a41a-c8387206ada2" class=""><div class="indented"><p id="95955287-db0f-471c-829c-06ac9ee208c3" class=""><span style="border-bottom:0.05em solid">Origine:</span></p><p id="7cd73260-1ea1-4572-8ae1-3accb29c2309" class="">La réinvention de la chicha est abordée dans le livre la Banlieue du turfu et l’internet des chichas est une création du quatrième atelier Fortnite sur le thème de la démocratie. Enfin elle à été mise en scène lors du septième atelier de la Gaîté Lyrique, “RDV 007 | Rêves, consciences et éveils à l&#x27;Internet des chichas’ lors duquel les participant.e.s ont débattu de la question suivante: “Faudra-t-il toujours sortir du quartier pour accomplir ses rêves ?” Ce débat donna naissance au Code du Multirêve de la rue.</p><p id="4243168e-4c6d-4bdd-b7b0-cb8cf816e9c0" class="">
+</p><p id="b3013518-6e71-4469-9f51-9abcff157390" class=""><span style="border-bottom:0.05em solid">A définir:</span></p><ul id="02958039-5c45-4b61-b568-4aaee8c3ec46" class="bulleted-list"><li style="list-style-type:disc">Quelle place pour les services publics dans le Métavers ?</li></ul><ul id="9a51a0a2-a326-4857-98af-a412430ac2d1" class="bulleted-list"><li style="list-style-type:disc">Quelle place pour les périphéries, la ruralité dans le Métavers hormis l&#x27;échappatoire ?</li></ul><ul id="36a605a2-5145-41ac-81d2-b3011c0ee058" class="bulleted-list"><li style="list-style-type:disc">Quelle place pour la gestion de la cité dans le Métavers?</li></ul><ul id="029137b0-1aa3-4598-946e-098164593038" class="bulleted-list"><li style="list-style-type:disc">Comment communiquer, partager son angoisse, son anxiété et en prendre soin dans le Métavers?</li></ul></div></p></details></li></ul><ul id="b2e5d5c4-db3e-47c8-917f-e1a6b976d941" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Equipe</span></summary><p id="f7e258f9-06d7-45c7-af8e-62d4aa28376c" class=""><a href="https://www.linkedin.com/in/aurahernandeznunaat/">Aura</a>
+<a href="https://pierrerose.studio">Jean-Pierre</a></p></details></li></ul><p id="012df86a-9d53-4864-ae11-5b9894fe8e71" class=""><div class="indented"><p id="7c81364e-58bb-4275-8fd2-a255ab1f4f4b" class=""><span style="border-bottom:0.05em solid">Création:</span> La chicha a le pouvoir de la mémoire et de garder les traces des héritages des turfuristes ayant vécu l’expérience de l’internet que celle-ci propose : un internet des rêves, des imaginaires, des sensations et qui se nourrit et se met à jour grâce à la touche que chacun y met.</p></div></p><p id="907ab2ab-5c7a-4b16-a8e9-78be7d89f7b5" class="">
+</p><figure id="fc9fb32b-5acf-43a7-ac43-d71c2cbc9068" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17.png"><img style="width:1905px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17.png"/></a></figure><p id="dd91c57e-ae81-4f99-9023-2b52988d22d7" class="">
+</p></details></li></ul><ul id="6c07e544-f957-4f74-9796-b2e204c0fa19" class="toggle"><li><details open=""><summary>⛵ <strong>Firdaws numérique</strong></summary><ul id="01da7e5b-81e3-48e7-af06-4ba314ec8687" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Brief artistique donné au participant.e.s</span></summary><p id="2f03bce4-1e76-4066-8304-021a99a90ab4" class="">Le <em>Firdaws numérique</em> est un jardin cosmico-numérique dans lequel vous découvrirez des capsules déposées par ses visiteurs au fil des passés et des futurs. Vous pourrez également y déposer vos propres capsules pour les générations futures.</p><p id="bf3817df-e57f-4a7b-9fd8-47e51824f7e5" class=""><em>Le Firdaws numérique</em> est le fruit de la rencontre du romancier Franck Herbert et des actions de la biologiste et militante Wangari Maathai. Au cœur même du désert nous cherchons à découvrir comment éveiller des symbioses insoupçonnées entre minéral, numérique et organique. Le firdaws reçoit régulièrement des chamanes du monde entier qui viennent s’y ressourcer.<div class="indented"><p id="09277adf-5094-46a8-ac4a-2c8852d0d028" class=""><span style="border-bottom:0.05em solid">Origine:</span></p><p id="e135fa46-001d-4781-9bdf-b06f28d24274" class="">Né durant l’atelier “RDV 003 | Pour un Agoravers afrocyberféministe&quot;, le Firdaws Numérique se positionne dans les lignée des pratiques artistiques afrofuturistes et afrocyberféministes comme celle de Anika Izora, Black Quantum Futurist, ou le travail d’archivage, la voie orale, et l’importance des savoirs ancestraux sont souvent mis en valeur.</p><p id="d67ef081-40b1-442f-8a0a-71c18fd2a4eb" class="">
+</p><p id="c512604e-0f9f-4b40-b58d-9af94f57ce7d" class=""><span style="border-bottom:0.05em solid">Proposition alternative:</span></p><p id="dd1f9dcf-c3a4-4778-8a5f-b096873946be" class="">Né durant l’atelier “RDV 003 | Pour un Agoravers afrocyberféministe&quot;, le Firdaws Numérique se positionne dans les lignée des pratiques artistiques afrofuturistes et afrocyberféministes comme celle de Anika Izora, Black Quantum Futurist, ou le travail d’archivage, la voie orale, et l’importance des savoirs ancestraux sont souvent mis en valeur.</p><p id="e69737d0-04f0-4a74-a46e-6c4b658557ba" class="">
+</p><p id="f56cbf22-1a72-45e8-b2da-996e474c5da0" class=""><span style="border-bottom:0.05em solid">A définir:</span></p><ul id="ea7ef0d6-9fdd-401e-b349-c5e219e7765b" class="bulleted-list"><li style="list-style-type:disc">Quelle est la place de la nature, de l’innovation et de la technique dans le Métavers ?</li></ul><ul id="8ec011a1-a3a3-4261-bf9d-19ab199d62a1" class="bulleted-list"><li style="list-style-type:disc">Comment développer un Métavers vert ?</li></ul><ul id="2331bb60-dad6-499d-a436-ed164ec4e8f1" class="bulleted-list"><li style="list-style-type:disc">Quel rôle joue le féminisme dans la création des Métavers et leurs narrations ?</li></ul><ul id="511e786d-b5d9-4da9-9cf6-a7e51fbb43f9" class="bulleted-list"><li style="list-style-type:disc">Comment des projets internationaux peuvent influencer notre perception des métavers et banlieues de demain?</li></ul></div></p></details></li></ul><ul id="f1293447-e4c7-4261-98ea-5048b90c9274" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Équipe</span></summary><p id="dfdb2213-b382-447b-b397-e7208ba54d01" class=""><a href="https://www.linkedin.com/in/sandra-coulibaly-leroy-b0620714/">Wandarella</a>
+<a href="https://www.linkedin.com/in/ma%C3%A9va-bigot-8ab127a7/?originalSubdomain=fr">Maéva</a></p></details></li></ul><p id="cd7abba0-681e-462d-8de3-3d88a5237b61" class=""><div class="indented"><p id="ab7814b6-6fbe-4110-ae15-2e91272c1011" class=""><span style="border-bottom:0.05em solid">Création:</span> J&#x27;arrive dans un temps que je ne connais pas… un Temps végétal… totémique… magistral… Je suis la pour traverser les pluriels et les lignes d&#x27;horizons des temps recomposés. Je longe la rivière des MANCHASHE : savoirs, magie, sensation, déraison, sentiments, souvenirs du passé présent, souvenir des temps de demain.</p><p id="1f61e6a9-9422-4699-9275-a0e4935b134b" class="">Arbre TOTEM, je te vois, je t&#x27;entends… Es-tu prêt pour ouvrir les 7 portes ?</p></div></p><p id="cec53296-fc5a-450e-986c-56476ee285df" class="">
+</p><figure id="9fd7d3a6-45b6-4439-81c5-24506e62ace2" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(5).png"><img style="width:1908px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(5).png"/></a></figure><p id="209da421-ea7f-4646-8c18-2a62cd34ab52" class="">
+</p></details></li></ul><ul id="137f285c-8eef-479e-b6ca-ac55ed7f0f8d" class="toggle"><li><details open=""><summary>🏁<strong> L&#x27;arène esport</strong></summary><ul id="48693423-e112-4767-9083-d83fd934cfa7" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Brief artistique donné au participant.e.s</span></summary><p id="3642b116-59b4-4148-9a4b-d9c07d3d5a71" class="">Lieu de pratiques sportives turfuristes, l’arène d’e-sport circulaire est un espace en constante réinvention, ou les terrains, règles, évoluent au fil de l’inspiration des joueurs et de leurs fans. Mais avant tout c’est aussi un écosystème équitable à circuit court ou les gains amassés au fil des confrontations sportives servent non seulement à rémunérer les sportifs mais aussi leurs fans, et leurs quartiers.</p><p id="37769720-5a94-4073-9b10-7c8f81b8a636" class="">Organes importants de la scène créative de l’Agoravers, les sportifs et sportives qui s’y retrouvent sont souvent aussi des poètes culinaires, pix.sableurs, philosophes.</p><p id="e541a315-ae59-457c-8531-1ede18c83ff4" class="">La dernière rencontre de F00T, a été streamée jusqu’aux fins fonds de l’Agoravers et a permis de largement subventionné la rénovation de la Bayt Al Hikma.<div class="indented"><p id="973e54fc-1416-4754-a19c-0712993d12f0" class="">
+</p><p id="513a8f8f-9b78-4e32-8b42-0eb548031aa7" class=""><span style="border-bottom:0.05em solid">Origine:</span></p><p id="1ff4dbf1-bc0d-4c06-8e1f-1cc2e1663dd0" class="">Explorée lors du cinquième atelier Agoravers, “RDV 005 | E-sport circulaire : de l&#x27;échappatoire à l&#x27;investissement”, la circularité associée à l’e-sport nous invite à questionner le rapport entre le corps et le sport (manettes, capteurs), les athlètes et leur entourage (streaming, famille), la dématérialisation (partielle) des lieux d&#x27;entraînement (relocalisation, cybercafés en banlieue), mais aussi repenser les pratiques souvent exploitrices des jeux de paris qui savent si bien cibler les publics de banlieue.</p><p id="3fc66cc0-0f81-4459-86b1-ca1ec2fa3e9c" class="">
+</p><p id="6a6b6a41-bea1-4b8a-b8dc-a226ada02b1b" class=""><span style="border-bottom:0.05em solid">A définir:</span></p><ul id="a5088cf6-432f-4759-84e2-b637604bced1" class="bulleted-list"><li style="list-style-type:disc">Comment l&#x27;e-sport peut-il participer au développement de l’Agoravers et lancer un processus circulaire et enrichissant à tous les niveaux ?</li></ul><ul id="a7dd116c-cc18-48f5-997e-501b1d0fc394" class="bulleted-list"><li style="list-style-type:disc">Comment développer une industrie créative respectueuse de l’environnement et enrichissante pour l’Agoravers et la société ?</li></ul><ul id="fb647c26-cb0f-40f1-b607-acb177658222" class="bulleted-list"><li style="list-style-type:disc">Quels nouveaux sports et pratiques compétitives émergeront dans l’Agoravers?</li></ul></div></p></details></li></ul><ul id="52fd47ae-f35d-40a0-be21-bb5007df6427" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Équipe</span></summary><ol type="1" id="fecd7211-0454-4768-b39e-7eafc16a41a2" class="numbered-list" start="1"><li><a href="https://www.linkedin.com/in/florence-bamba-524400232/">Florence Bamba</a></li></ol><ol type="1" id="b4bce539-d4c5-4cb8-a964-db8c950d0e13" class="numbered-list" start="2"><li><a href="https://afalfl.bandcamp.com/">a f a l f l</a></li></ol><ol type="1" id="1ce8a6cc-4aee-4f67-85c8-76a640d617ee" class="numbered-list" start="3"><li><a href="https://www.linkedin.com/in/matthias-honorat-14bb57109/">Matthias Honorat</a></li></ol><ol type="1" id="cc0dd207-6cc8-4f6c-80a6-e1300a8422a4" class="numbered-list" start="4"><li><a href="https://www.linkedin.com/in/diane-despois-25705b5b/">Diane Despois</a></li></ol><ol type="1" id="035f149c-616d-42be-8920-092fa2820412" class="numbered-list" start="5"><li><a href="https://www.linkedin.com/in/n%C3%A9guine-mondor-4a6188124/">AstroBoi</a></li></ol></details></li></ul><p id="0545134e-b5b5-4ca4-a37d-01e244e2c83f" class=""><div class="indented"><p id="e6e06304-dcb3-41e0-91b6-773f411b1d43" class=""><span style="border-bottom:0.05em solid">Création:</span> J&#x27;ai fait un rêve… D&#x27;une tour à la babel, limite elle dépasse les nuages dans le ciel. J&#x27;ai envie de l&#x27;appeler... Le Village du Binks / Le Village du Turfu / Le Village du vaisseau-mère / Le Village du tierkar.</p><p id="fbc19254-a1f5-464d-986c-5bba0436dd0d" class="">Dès que tu rentres dans la tour, tu es applaudi alors que tu as encore rien fait ! Tu vois au REZ-DE-CHAUSSÉE, c&#x27;est comme-si t&#x27;étais dans l&#x27;espace, les murs sont en constellation représentant les différents sports qu&#x27;on trouve dans les arènes.</p></div></p><p id="af6add16-641e-4ca3-b378-9e5b5c71eef3" class="">
+</p><figure id="b467759d-dd64-47a8-b235-46cd04bcb70e" class="image"><a href="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(8).png"><img style="width:1908px" src="RDV%20008%20&amp;%20009%20Agora%20Jam%20d30ae828e61f414c9e5ae6dcaeb389e0/2022-05-17_(8).png"/></a></figure><p id="f64f839b-da9d-4eea-9a7a-86db5a91d4e5" class="">
+</p></details></li></ul><p id="598a4cf5-0002-4246-a84a-bdb127b3c585" class="">
+</p><p id="5fd5bcba-12d6-4a8d-94c4-9102dc9e3fa7" class="">
+</p><p id="a3cb655a-6195-483d-8ba8-89fd0073082e" class="">
+</p><h2 id="70faa9fb-4f34-42cf-823e-52fc02c616b4" class="">L’Agoravers vu par les participant.e.s</h2><ul id="1f7a8478-8aa7-434f-8773-5c17c744f140" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Que représente pour vous l&#x27;Agoravers? Que représente la Banlieue du Turfu?</span></summary><ol type="1" id="a6dff427-e8b9-43f0-a287-7acdbae4d0e8" class="numbered-list" start="1"><li>L&#x27;Agoravers représente une nouvelle alternative pour laisser place à son imaginaire et la banlieue du Turfu est donc un nouveau champ des possibles sur notre regard sur la banlieue.</li></ol><ol type="1" id="4ac94c99-a79b-4f3b-bcbb-800dccc76e89" class="numbered-list" start="2"><li>Pour moi c&#x27;est un lieu d&#x27;expérimentation, une nouvelle terre, un laboratoire où nous sommes tous des chercheurs, des explorateurs, et des créateurs. C&#x27;est clairement l&#x27;aspect le plus réussi de la Jam et du projet en général : la diversité des profils, tout en gardant un pied d&#x27;égalité et des rapports bienveillants.</li></ol><ol type="1" id="70a228fe-0ab4-43ea-bd3b-73243eacc628" class="numbered-list" start="3"><li>Je ne sais pas, l&#x27;humanisme ?</li></ol><ol type="1" id="49bd9c83-b4ee-4756-b8ba-9677dc606873" class="numbered-list" start="4"><li>L&#x27;agoravers est une cyber-utopie, un espace virtuelle ou chaque lieu et chaque personnes sont connectées les uns des autres par la volonté de vouloir faire vivre cet espace .
+Pour moi la banlieue du turfu représente une problématique sociale et politique qui cherche à se résoudre d&#x27;abord par des idéaux, de la créativité voir de la magie plutôt que par des réfléxions pragmatiques et effectives</li></ol><ol type="1" id="4b42f922-6ead-47ce-9dff-97484e328967" class="numbered-list" start="5"><li>La Banlieue du Turfu représente pour moi le champs des possibles , il représente l&#x27;avenir , une forme philosophique de l&#x27;optimisme et le droit du rêve, le droit de transformer les idées ... L&#x27;agoravers représente pour moi un espace virtuel composé d&#x27;élément &quot;réel&quot; dans lequel on peut s&#x27;extirper un instant</li></ol><ol type="1" id="20fa88eb-d6ab-48e9-a653-af9d2c685627" class="numbered-list" start="6"><li>un espace de discussion pour reprendre la main sur le futur</li></ol><ol type="1" id="0ab8d0ec-1bcf-46ac-ab31-92b48d2046b8" class="numbered-list" start="7"><li>L&#x27;agoravers représente l&#x27;espace de (re)découverte de soi et du monde, avec la possibilité de le transformer pour se transformer soi et le monde réel.</li></ol><ol type="1" id="c13c3859-66a8-4ed6-8475-ececf9a7db97" class="numbered-list" start="8"><li>La banlieue du Turfu, l’expression d’une vision de la société, avec comme point de départ l’analyse critique (philosophique) de la banlieue.</li></ol><ol type="1" id="88a31e79-6d04-4764-9bff-877ed8236d8b" class="numbered-list" start="9"><li>L’agoravers : un Think Do Tank capable de donner une nouvelle fonction aux outils numériques et matérialiser une nouvelle ambition pour la société en général et la banlieue en particulier.</li></ol><ol type="1" id="c95def4f-3961-41b7-b3f4-aa4b563b1b8c" class="numbered-list" start="10"><li>Le lieu des possible, de l’échange et du partage. La renaissance et la réappropriation.
+Agoravers;Alternative citoyenne et espace de diversité/ partage</li></ol><ol type="1" id="4669dff6-a3fb-463a-b12b-1d0f2ff1eabc" class="numbered-list" start="11"><li>Je vois l&#x27;Agoravers comme un compost collectif de dépot et de puisement d&#x27;un imaginaire collectif, un inconscient qui fait surface et qui prend soudainement forme. La Banlieue du Turfu est pour moi une invitation à remettre philosophie et poésie au coeur de la manière dont nous habitons ensemble avec la Terre en tant qu&#x27;être humain.</li></ol></details></li></ul><ul id="13841765-2df1-4bb1-ac03-b25d10c3fee5" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Quelles distinctions ferriez-vous entre Agoravers et Métavers?</span></summary><ol type="1" id="14ba4e20-0d03-480d-97d7-cbf72a91cefc" class="numbered-list" start="1"><li>Je dirais que pour l&#x27;agoravers est un espace collectif d&#x27;échanges, d&#x27;idées par des mots, des pensées par l&#x27;image, le son et la vidéo alors que le métavers à pour moi quelques choses de plus immersif et plus interactif, grâce a ce que l&#x27;on collecte dans l&#x27;agoravers, le métavers peut-être nourri et surtout le vivre.</li></ol><ol type="1" id="25d8c219-f229-4548-8920-843a1ed2d1e6" class="numbered-list" start="2"><li>L&#x27;Agoravers, à l&#x27;heure actuelle, représente pour moi bien plus que son simple état virtuel, il est aussi symbole de tout ce travail de collaboration, les discussions bouillonnantes, les débats, les nouvelles rencontres, et les gâteaux de la gaîté lyrique bien sûr.</li></ol><ol type="1" id="e84f939f-d8a4-4ad4-9c9b-f4bf4b0b9183" class="numbered-list" start="3"><li>La décentralisation et auto-détermination</li></ol><ol type="1" id="35a1dbc5-a0da-4ed9-bf7d-4a6e80483ec6" class="numbered-list" start="4"><li>L&#x27;agoravers cherche à créer une communauté avec des aspirations particulières, créer des connexions avec les différents mondes qui les constituent. La metavers n&#x27;a pas direction dans ce sens, mise à part créer un nouveau phénomène social/réseau social</li></ol><ol type="1" id="73489178-2dd1-437d-a7ee-5c6e9be2cb0e" class="numbered-list" start="5"><li>La distinction que je fais c&#x27;est que : le métavers c&#x27;est un espace virtuel ou on essaie d&#x27;explorer internet ;  l&#x27;agoravers  c&#x27;est un espace virtuel qui a plutôt une spécifité cognitive et ou on essaie de répondre à des problématiques liée à l&#x27;espèce humaines
+l&#x27;open source, le but non lucratif, l&#x27;objectif d&#x27;améliorer le bien commun et la société</li></ol><ol type="1" id="e06d7075-d56b-475d-bbb3-482a66162062" class="numbered-list" start="6"><li>A l&#x27;Agoravers c&#x27;est nous qui décidons qu&#x27;est-ce qu&#x27;on veut comme monde, le Métavers c&#x27;est difficil de savoir qui met les règles du jeux et pourquoi..</li></ol><ol type="1" id="58706654-1a47-40a3-967d-57bc89010d98" class="numbered-list" start="7"><li>Agoravers est portée par une ambition positive et constructive ; le métavers est seulement mercantile...</li></ol><ol type="1" id="33aaf954-7cfe-4f89-b948-25fa6a983b61" class="numbered-list" start="8"><li>L’agoravers est physique et virtuel, il existe par sa construction et son développement. C’est un moyen, et pas que une fin en soi, pour connecter et imaginer des futurs désirables. Plus, il n’a pas de vocation que capitaliste vs. le métavers en général.</li></ol><ol type="1" id="436bc32a-0c90-4ed5-ae09-63fff01d8956" class="numbered-list" start="9"><li>Peut-être que l&#x27;Agoravers porte l&#x27;intention de créer un espace numérique comme support d&#x27;un espace psychique de création personnelle et collective où les interactions visent à favoriser l&#x27;émergence de mondes alternatifs dans nos esprits, dans nos coeurs et dans notre environnement tandis que le Métavers est une description factuelle d&#x27;un autre espace d&#x27;interaction que le monde physique.</li></ol></details></li></ul><p id="ffd0cd19-5dd5-4fe0-83da-45fa07c19828" class="">
+</p></div></article></body></html>

@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RDV 007 | Reves, consciences et eveils a l&#x27;Internet des chichas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="67a3eefd-d273-4b0e-91e9-3969fbb61241" class="page sans"><header><h1 class="page-title"><strong>RDV 007 | Reves, consciences et eveils a l&#x27;Internet des chichas</strong></h1></header><div class="page-body"><p id="32b7ec10-1eba-4a1e-ade9-e4f9b63afbf6" class="">
+</p><h1 id="e95b54ff-e444-49aa-8172-8f82cfa30bd3" class=""><strong>Carnet de l&#x27;Agoravers 007</strong></h1><p id="c54461c7-41fc-46e4-a5b7-55b54f4b01ae" class=""><a href="https://docs.google.com/presentation/d/1hjtwhvgvvrqtoIzHEfBfg-1iORS3kpXFQDAmHZjHfn8/edit#slide=id.p">DIAPOS DE LA PRES</a></p><p id="f2d24a39-99f0-425a-9ca5-b3c47a7110f0" class="">
+</p><p id="1a4e4f5d-18a7-45c5-afcd-51ba0dbcd6ef" class="">
+</p><p id="a41ca520-0b98-4d7d-b106-a0b066b0b3ce" class="">
+</p><p id="6376be6b-537b-472c-83fb-11172421738c" class=""><strong>Premise</strong></p><p id="20a378e5-b4ee-4bbc-8995-b0533bdda3aa" class="">L&#x27;atelier a propose aux participant.e.s de débattre autour de la question: “Faudra-t-il toujours sortir du quartier pour accomplir ses rêves ?”</p><p id="4a7c22a0-539d-4f28-ba10-89aa8225d0b8" class="">Pour le dernier atelier de la saison, nous avons répondrons à cette question fondamentale du projet de la Banlieue du Turfu. Dans la culture quartier, la thématique du rêve impossible est récurrente tant dans le discours des habitants que dans les productions artistiques. Annoncer que nous souhaitons, devons quitter le quartier est une norme sociétale à laquelle les banlieusard.e.s se sont habitué.e.s.</p><p id="422b1d5a-1729-4a1a-be9b-210f349de239" class="">
+</p><figure id="b2e69af7-44ba-494e-b692-2ad76596e8c1" class="image"><a href="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/Untitled.png"><img style="width:528px" src="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/Untitled.png"/></a></figure><figure id="c8c237c5-d849-4826-a920-713d068265fc" class="image"><a href="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_145934.jpg"><img style="width:528px" src="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_145934.jpg"/></a></figure><figure id="a96cb3e9-9ac2-4e63-8545-33aa5d9ed671" class="image"><a href="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_145953.jpg"><img style="width:528px" src="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_145953.jpg"/></a></figure><figure id="0c8210c2-5bd7-4899-99a0-b043d371cf5d" class="image"><a href="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_143723.jpg"><img style="width:528px" src="RDV%20007%20Reves,%20consciences%20et%20eveils%20a%20l&#x27;Internet%20%2067a3eefdd2734b0e91e93969fbb61241/20220305_143723.jpg"/></a></figure><p id="67a90cda-e2b2-4651-98d4-0e5a222c0272" class="">
+</p><p id="23e9c71d-071b-4589-87c5-7d38e5437be1" class=""><strong>Retour d’experience</strong></p><p id="680e9e02-f9a7-470f-81d7-f67adf1de6de" class=""> ⌛ Chargement en cours… ⌛</p><p id="1abd5df3-4bdc-4e34-b20b-393f3ea61fb4" class="">
+</p><p id="6320e5b8-dd7d-4bfa-adb5-2c2daeffe7c9" class=""><strong>Propositions pour l’Agoravers</strong></p><p id="5de0428e-5d15-4c6d-8ba8-da9ea1d02a8b" class="">Le debat fu resume en une serie de principes sur la vie dans l’Agoravers:</p><p id="5fdcb5ca-0a98-43d7-afc1-042f64d69fd6" class=""><div class="indented"><p id="622f1154-16cc-4697-83aa-57ec879995c6" class=""><span style="border-bottom:0.05em solid">Code du Multirêve de la rue</span></p><p id="051a33ee-f582-45e9-8837-214583765d81" class=""><em>Préambule : ces principes sont rédigés dans le soin d’impulser l’autodétermination de chacune des personnes qui habitent ce lieu.</em></p><p id="2af5ba90-8edb-4d70-8b34-0d82f10c1a15" class="">I.</p><p id="9fcd3d7a-3ced-4e05-89d3-b264464151a1" class="">Tu prendras soin de toi, de ton bien-être physique, psychologique et relationnel.</p><p id="d7d0e1ef-9fcf-4393-866d-68f9d25f0f4c" class="">Tu veilleras à te respecter dans ta relation aux autres.</p><p id="c1940822-5a67-427d-8a74-bdde9d0d82fb" class="">Tu te donneras les conditions pour faire émerger tout ce que tu es.</p><p id="b133e039-8de7-4d5a-b7e8-a737e799b811" class="">Tu feras la différence entre les rêves et les codes de réussite de ton environnement.</p><p id="7514de8b-0120-40b4-828c-2c13b07ccc7c" class="">II</p><p id="140defe2-da8b-4a98-a1b2-31b89f437b4e" class="">Respecter ses rêves et ceux d&#x27;autrui.</p><p id="98d38f58-ab6f-4f91-9e4e-93a9eedb712a" class="">Se donner le droit de partir. Et d’échouer, les échecs font partie de la réussite.</p><p id="09ce75e6-4b85-4049-9362-32f08bbee589" class="">Contribuer au développement des banlieues. Donner envie à un habitant de croire en ses rêves et l&#x27;aider à le réaliser.</p><p id="e8c28250-2436-4ea6-99af-58acb16be50f" class="">III</p><p id="f2789949-2343-48e3-93f1-af56b759f270" class="">Toute personne qui a un rêve dans la banlieue du turfu doit le partager à la communauté pour qu&#x27;il devienne œuvre commune sur le site multireve.net.</p><p id="88028c90-3191-4cd2-a5c6-131c2bf9a553" class="">Le beaulieusart du turfu ne doit jamais limiter ses rêves.</p><p id="66d63394-0cb9-4abf-b461-4ebac4c3b62c" class="">Chaque banlieusard du turfu a le droit à 1000 crédits par mois afin d&#x27;accéder à moyen de réalisation extérieur.</p><p id="d2a7b0e6-0662-4f73-9825-8c7eaf2e2114" class="">IV</p><p id="b28a071c-46f1-4389-a8dd-bf0ee6231318" class="">Toute personne de la banlieue du TURFU ne se verra pas contrainte de rêver dans le cadre des besoins de la société.</p><p id="0904184a-0247-4dff-b1fc-4cf71cd7653a" class="">Son rêve devra dans sa réalisation toujours créditer le soutien que la banlieue du turfu lui a apporté.</p><p id="6224c6a4-63f7-445d-bfca-83fdff68e723" class="">Toute personne qui va vivre ailleurs ses rêves doit revenir dans la banlieue du turfu pour le partager à un moment de l’année en film ou en podcast.</p><p id="1dc21d34-2b33-4ee5-8773-616af19a388a" class="">Montrer aux gens du quartier qu&#x27;il n&#x27;y a pas de croyances limitantes qui empêchent de vivre le rêve dans le quartier ou en dehors du quartier.</p><p id="2dab1a02-ffe8-4407-ad3c-71721ea0384f" class="">Créer une capsule à rêve que l&#x27;on doit ouvrir chaque année pour voir ceux qui ont été réalisés.</p><p id="cda6360b-ed49-4c8e-a0a2-8dcefc67cca1" class="">V</p><p id="bb98843b-f00f-4a3b-84f1-6ff5f023cebd" class="">Ton rêve n&#x27;est pas forcément celui auquel tu penses.</p><p id="4cee5f2c-a6c5-44f1-8a25-2c271cc7b42b" class="">Réfléchi aux influences que l&#x27;on t&#x27;apporte</p><p id="48d8597a-c346-4f2e-8f30-5c52ff97e89f" class="">Même réaliser, ton rêve sera différent que dans tes rêves</p><p id="a97bea5e-1ee3-4886-9e7c-461ed66b8610" class="">VI</p><p id="67bc54af-2a4b-421c-80a6-6f094862a89f" class="">Tu respecteras les frontières (bulle intime) de l&#x27;autre.</p><p id="8813130e-56f7-475c-9956-981a2f23d320" class="">Tu ne prendras jamais, tu échangera toujours</p><p id="6c7f6ba4-ff9e-4270-8bc0-1ac022e120fe" class="">Tous les échanges seront monétiser socialement par un bilan donnant-donnant ne pouvant dépasser un rapport de ⅓.</p><p id="293e670c-1309-4722-b7a7-017258cd9286" class="">VII</p><p id="16e594ea-e44d-4351-8a96-dec8da8bb5f6" class="">Si tu quittes la banlieue, n&#x27;oublie pas que c&#x27;est elle qui t&#x27;a aidé à construire et à réfléchir à ton rêve.</p><p id="3777ab89-5fd9-4c0f-842b-b2a6aa45b113" class="">Si tu quittes la banlieue, n&#x27;oublie pas de revenir développer les rêves des autres.</p><p id="28a1b8a1-2944-4057-b746-267304325d39" class="">Si tu quittes la banlieue, n&#x27;oublie pas de rêver d&#x27;un retour en banlieue.</p><p id="2e8b4f6f-e786-445e-9380-08a139b5686d" class="">VIII</p><p id="41908935-4437-4ce8-b842-ab7007925c9a" class="">Ne tenter de changer les lieux qu’après avoir appris à les aimer.</p><p id="d48b90e5-c73e-4bed-bdbf-f64ceb66b016" class="">Si ton rêve nécessite de quitter la banlieue alors elle t&#x27;accompagnera, ne l&#x27;oublie pas, rends-lui quelque chose si tu peux.</p><p id="4381f8c2-b9b9-4774-9fa7-57187ebad940" class="">IX</p><p id="f5a1be27-77a8-4db2-a6fc-10560fc4edf2" class="">Chaque nouveau-né de la banlieue reçoit une cérémonie de bénédiction avec des elfes/fée des rêves.</p><p id="f6729461-44fb-41b9-b329-2bff11526672" class="">Chaque année tous les personnes nés la même année organise un événement pour matérialiser leurs rêves</p><p id="c571ee25-a9f0-46af-8f9b-1da0d09ace86" class="">À partir de l&#x27;âge de 5 ans, on peut être candidat pour désigner les elfes/fées des rêves dont le rôle est d&#x27;être à l&#x27;écoute des rêves de chacun.e de les faire émerger, de les transmettre et de favoriser les conditions de leur matérialisation.</p></div></p></div></article></body></html>

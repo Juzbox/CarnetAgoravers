@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RDV 002 | Mythologies et imaginaires partages</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fa73c6f9-5ef6-4f15-b45e-11f89f58965e" class="page sans"><header><h1 class="page-title"><strong>RDV 002 | Mythologies et imaginaires partages</strong></h1></header><div class="page-body"><h1 id="e9958b86-1f14-4bc4-ad9b-547930ce7bfd" class=""><strong>CARNETS DE l&#x27;AGORAVERS 002</strong></h1><p id="f53cfefc-00e3-4d09-a991-5160a500996b" class=""><a href="https://docs.google.com/presentation/d/1BEayEBbM26MwmrCVz20sfgHtRGOijpMQnbIfERos1pk/edit#slide=id.gead1af5dfc_0_184">DIAPOS DE LA PRES</a> par Yanis Ratbi <a href="https://instagram.com/syncretical/">aka Syncretial</a></p><p id="c7f2b62b-f1d6-4c48-aab8-938b67a3d73e" class="">
+</p><p id="107ea55e-8b0c-48a4-b033-e52ab4e1fdac" class="">
+</p><figure id="a2c480ae-72bc-46d5-859b-81b9dcd31519" class="image"><a href="https://s3.amazonaws.com/cloud.kumu.io/accounts/227195/700917/847dd17b-bfb1-4615-9bad-c0a80c34b716.jpg"><img style="width:240px" src="https://s3.amazonaws.com/cloud.kumu.io/accounts/227195/700917/847dd17b-bfb1-4615-9bad-c0a80c34b716.jpg"/></a></figure><p id="310b6a79-1209-42d7-9965-9952226f8ce0" class="">
+</p><p id="9f003d43-ab2d-4823-af88-5bf402ddabfd" class="">
+</p><p id="af54ee09-0b1c-41de-baff-622490a1eb31" class=""><strong>Premise: </strong></p><p id="81823982-f24e-4e64-b37f-0b660475d891" class="">Quelle influence ont les mythologies sur notre perception des mondes que nous habitons ? Qu&#x27;ils soient physiques ou virtuels, sous forme de statue ou de tradition orale, les mythes nous transmettent des valeurs et des grilles de lecture. </p><p id="12d538e0-4366-4599-b76f-805cea0a783e" class="">
+</p><p id="48accd8b-6b57-43be-a71d-734c826bc008" class="">Lors de cette deuxième date, nous avons découvert le travail de <a href="https://instagram.com/syncretical/">Yanis Ratbi (aka Syncretical)</a> et avons travaille avec lui sur l&#x27;invention de nouveaux mythes pour l&#x27;Agoravers.</p><p id="91753048-87c8-4995-b75b-29f583873b2d" class="">
+</p><figure id="0681c6a8-61f1-4a91-9954-49cd6a3fa11e" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/20211002_142638.jpg"><img style="width:528px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/20211002_142638.jpg"/></a></figure><p id="b63a07d4-63d3-4086-b304-49aa0e6726eb" class="">
+</p><p id="45e1fd70-fa4f-4c9c-9401-19f90358799c" class="">
+</p><p id="3f98da45-ea42-4f6c-bf18-c34b0188c212" class="">Pour faciliter notre exploration Yanis nous a présenté quatre grands types de mythes. Chacun de ces mythes a été associes a un jeu vidéo, plus ou connu dont l’univers semblait représenter au mieux le type de mythe en question. </p><p id="4eccd81c-026d-41ce-84b5-2791edca63b9" class="">
+</p><ul id="1e3cfe32-73c2-463f-90a6-620d88b092eb" class="toggle"><li><details open=""><summary><em>Espace mythologique</em></summary><p id="d258c61f-7353-4414-95b1-d7c5c22031c0" class="">Ces espaces peuvent revêtir un caractère sacré et extraordinaire. Antiques, contemporains ou futuristes, ils incarnent des idéaux de sociétaux..</p><p id="a8cf2cf0-2b9c-450c-9e68-a229cd1f3177" class=""><em>Exploré via | Heaven&#x27;s Vault..</em></p><figure id="d88e66cf-7465-4e32-9a6c-aad52c2da01b" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/7236899_vhO1j3iOtYs2YOi5e56yjQwb.jpg"><img style="width:1440px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/7236899_vhO1j3iOtYs2YOi5e56yjQwb.jpg"/></a></figure></details></li></ul><ul id="b6d8d49e-d2e1-41d0-9cab-312e3a9c9c11" class="toggle"><li><details open=""><summary><em>Mythes des Origines</em></summary><p id="6c750a4f-d871-45d1-9faa-9b668c5e4dd0" class="">C&#x27;est un récit de caractère fondateur qui porte sur le sens ou sur l&#x27;origine des choses..</p><p id="5a8c7516-47a5-48cf-bb9c-66246e110223" class="">Exploré via | Aurion: Legacy of the Kori-Odan..</p><figure id="d5b8d0da-6df6-483b-8f04-238914802a3c" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/capsule_616x353_french.jpg"><img style="width:616px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/capsule_616x353_french.jpg"/></a></figure></details></li></ul><ul id="0824a4f8-14db-4528-a10a-91fcdf0b5a94" class="toggle"><li><details open=""><summary><em>Mythe du voyage / de la quête / de l’odyssée </em></summary><p id="d5817486-f6ce-442e-857a-a361aa86f4c4" class="">Ce mythe désigne un voyage extraordinaire, plein de rebondissements et d&#x27;aventures. Le héros mène une quête vers une terre perdue ou promise…Exploré via | Journey… </p><figure id="305a88ef-c585-49b5-8275-e2d2715573d2" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/journey-1.jpg"><img style="width:1920px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/journey-1.jpg"/></a></figure></details></li></ul><ul id="0dec1f8a-3a4a-4f52-bd77-6e8c4f28ebaf" class="toggle"><li><details open=""><summary><em>Mythe du monstre </em></summary><p id="55daa7af-4dee-42b9-9732-623728a5ee86" class="">Le monstre est une créature dont l&#x27;aspect ou le comportement surprend, car il n&#x27;est pas en accord avec les normes de la société. Le monstre peut également être une créature imaginaire souvent tyrannique et mauvaise..Exploré via | Coffee Talk..</p><figure id="c43b616f-9588-4ae8-8210-d953e37757c2" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/preview-IIM.1024x576.jpeg"><img style="width:1024px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/preview-IIM.1024x576.jpeg"/></a></figure><p id="de4d7467-30bd-49e1-9765-9d6c7eb7d26c" class="">
+</p></details></li></ul><p id="9f9b0ed8-3a5e-4818-91ee-60e2de2c6e58" class="">
+</p><p id="be759569-7cc8-4a36-ae95-75b07f33eeb9" class=""><span style="border-bottom:0.05em solid">Le collage</span> (<a href="https://miro.com/app/board/o9J_luGOPx0=/?invite_link_id=631785629465">Lien Miro</a>)</p><figure id="e91dd59e-13fb-4419-a1f6-a5e81da48abe" class="image"><a href="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/AGORAVERS.jpg"><img style="width:1703px" src="RDV%20002%20Mythologies%20et%20imaginaires%20partages%20fa73c6f95ef64f15b45e11f89f58965e/AGORAVERS.jpg"/></a></figure><p id="57092c33-a13f-440b-88d8-c1f48ea0b0d9" class="">
+</p><p id="c1c1be44-c9d5-457c-8977-0208674e4a77" class=""><span style="border-bottom:0.05em solid">Les Histoires</span></p><ul id="8adb6143-85cf-40f0-abdd-964886d63b47" class="toggle"><li><details open=""><summary>001 | L’Invite mystère</summary><p id="fe3bc928-c5d3-4ebf-907e-9fc679cfd32e" class="">Grosse soirée dans la tour nuage d’une banlieue. La fête bat son plein, la musique techno a fond fait vibrer nos convives. Pour animer la soirée, une personne à l’apparence banale et insoupçonnable de tout mal distribue et propose à nos invités une substance nuageuse. Attirés par l’aspect mais aussi l’odeur sucrée de la substance nos convives se jètent et la consomment en un rien de temps.</p><p id="b6e9fcd7-92ab-4650-b8de-d9efb445b7f1" class="">Tout d’un coup, la musique est perçue différemment par chacun des invités et l’atmosphère change. La chaleur augmente, les invités semblent se multiplier et pourtant chacun se sent cruellement seul et épié par l’autre. Un sentiment de gêne et d’incertitude s’installe chez chacun.</p><p id="68399fd3-976f-46a1-8eba-b7aa0251ddba" class="">Le lendemain matin au réveil, chacun des participants se trouve dans un état de gueule de bois, ils tentent de se rappeler l’évènement et de comprendre ce qui s’est passé. Certains d’entre-eux font le lien entre la personne qui leur a servi cette substance et leur mal être, d’autres sont confus et questionne ce qui s’est réellement passé et dénoncent le club de la tour...</p><p id="716fba92-0c17-4e96-bd71-deead0eb5e3e" class="">.</p></details></li></ul><ul id="59c81b3c-2032-466a-aaa5-c70b42c70f7c" class="toggle"><li><details open=""><summary>002 | LA SORCIÈRE DE TLEMCEN</summary><p id="d68f8a96-a4a0-4ed6-990e-0031eea7b0cb" class=""><em>Texte de Amina, Hairat, et Hadidja</em></p><p id="fd693f5c-38fd-435a-9b8d-08d14b8ea36a" class="">Elle a guéri celui que tout le monde croyait condamné.</p><p id="58a6bfe3-fc35-4e53-a758-f29852247369" class="">Celle qui maîtrisait les plantes</p><p id="fb65b16e-e00f-4f9a-ad71-8ae7666f932e" class="">Est accusée de l’avoir ensorcelé.</p><p id="d2d7c987-6b25-408d-93d7-fe324fdbba04" class="">Maudite par ses tantes,</p><p id="d89ca5a4-35ae-428a-aa80-876c192e6a7a" class="">Elle est contrainte à l’exil.</p><p id="bb9d4e17-c5b8-46b4-b667-7697c3fdb9c3" class="">Elle rencontre des gens de foi,</p><p id="b6ee77cf-8670-474b-9437-6d955e0f3b8f" class="">Dont les croyances vont la mettre en péril.</p><p id="07eedde0-35cf-4e4d-9a07-ee6cdd0759d2" class="">Ils cherchent à la remettre sur le chemin droit,</p><p id="936e86b9-4b0d-4a1c-b76d-227d07a26a89" class="">Sans penser que ce chemin n’est pas le sien.</p><p id="472afce6-52a6-45e0-b114-63c3d67acacb" class="">Elle quitte ces faussement bien guidés.</p><p id="4e144868-451f-429b-9b9d-a39408e8336a" class="">« Où aller ? Vers qui me tourner ?</p><p id="6871e45c-5558-4018-ac48-3e59130fa031" class="">Dois-je renier qui je suis pour plaire à ma famille ? »</p><p id="f3f2c52f-93e6-4473-87c3-c828cabcee48" class="">Soudain, une voix l’entend :</p><p id="77981cc0-4dd1-4218-b93c-b783df354bdd" class="">« N’aie pas peur ma sœur,</p><p id="eb5fd053-8915-4fc0-9429-ccd40251b0e1" class="">Ton pouvoir n’est pas un châtiment.</p><p id="9d713bfc-e5cf-4a3d-8200-14d63153ca39" class="">Il vient du plus profond de ton cœur,</p><p id="bc6040df-bb26-4241-9e66-19fda64ea174" class="">Ne cherche pas à l’effacer,</p><p id="d29ead60-696e-4976-9c81-3b7966d6b4b3" class="">Il sera toujours auprès de toi.</p><p id="84c0c6c0-a6af-4611-afc7-f96318c2180c" class="">J’ai moi aussi dit adieu à mon passé,</p><p id="978b94fd-8bc5-4306-8a0e-e9e60532cbcc" class="">Tu trouveras du secours auprès de moi. »</p><p id="0939dc2e-cfc5-4cd9-96da-eb4ae14e6cd5" class="">Cette voix bienveillante l’invite</p><p id="d260f034-e0c9-497b-96de-d362fcd27e62" class="">à se tourner vers de nouvelles contrées.</p><p id="10864c14-52ed-4082-82bd-7fc6a46520d0" class="">Mais son cœur résiste,</p><p id="dcb1e217-27e8-4872-88a1-eb218ba6614e" class="">Apeuré par la nouveauté.</p><p id="aeecda1d-0cd8-4185-8d96-a902c648edca" class="">Après s’être imposée des barrières,</p><p id="ffd6d82e-5355-4a19-8392-a187a51c613b" class="">Elle qui rêvait d’un retour en arrière</p><p id="39ab6d01-64ea-4238-80f0-7fa3bf5f141b" class="">Finit par lâcher prise</p><p id="52e18181-0297-4928-9374-bb1615d13801" class="">Et accepter de chercher sa terre promise.</p><p id="6c225ab7-65c0-4c5a-ab79-36174a3d3f13" class="">C’est chez d’autres femmes</p><p id="63aa622d-ffcb-4289-8141-fb32ae9b05af" class="">Qu’elle trouve du réconfort</p><p id="24e664a2-cd1e-4b82-bb87-c0fa1ecd47e5" class="">On les appelle « les mauvaises âmes »,</p><p id="8b2f0c21-9c7a-43ef-9705-10b481c0faa4" class="">Mais elles n’ont jamais jeté le moindre sort.</p><p id="4d920501-fdeb-426d-8f7d-826011d46311" class="">Cette obscure clarté</p><p id="308dc032-3a7e-4024-ab70-34733c1e3239" class="">L’a finalement guidée vers un havre de paix.</p><p id="86af8aa9-c640-4faf-a237-d9d291b5f97e" class="">C’est dans la sororité</p><p id="49cea4ac-cd8e-4709-b521-55dc59486d89" class="">Qu’elle a compris son essence vraie.</p><p id="6fb9e5ba-2052-4517-95d5-4efca27514cd" class="">.</p></details></li></ul><ul id="92f6b505-7d10-4d25-b332-631fa0d3649a" class="toggle"><li><details open=""><summary>003 | L’Extrarbre</summary><p id="32327d77-e0a1-4f7d-a5a6-1dba7ae6edb7" class="">Depuis des millénaires, un arbre pousse dans une terre désolée à la peripherie de la ville. Cet arbre peut prendre la forme de n’importe quelle entité vivante.</p><p id="4760e572-6e52-41f5-b3a6-9a490c7b3907" class="">Sa monstruosité réside dans sa metamorphose et dans ses racines qui sont sa source de pouvoir mais aussi sa prise sur la terre et ses habitants. La raison d’être de cet arbre, c’est qu’il est un arbitre de justice pour régler les inégalités sur la planète, et c’est cette mission qui le rend monstrueux. Mais dans cette mission, il se nourrit de ce qu’il extrait à chacun.</p><p id="3920fdf4-25e4-4dd8-98b3-b865c89b2577" class="">Personne n’ose se rapprocher de cet arbre parce qu’il est connu pour son imprévisibilité. Un instant il peut être votre ami et un autre le pire figure que vous ait jamais rencontré. Tant que vous restez dans ses environs</p><p id="f83798d0-381c-4b17-b1cc-f8210495501b" class="">vous êtes sous l’illusion d’être entouré par une force. Mais dès que vous partez vous ressentez qu’il vous a prise quelque choses avec ses racines mythiques.</p><p id="9b982dbc-0430-475e-b4e4-02027aac4bcf" class="">Pour combattre ce monstre il faut arracher ses racines, mais à chaque fois il se reconstruit sa racine en puisant la personne qui vient se reposer au près de lui.</p><p id="a22c0bcd-0fc0-44c7-849a-d204fd052b2b" class="">Et donc, il faut l’empêcher de puiser et arracher ses racines.</p><p id="e9b6198b-7f14-4197-90f0-ca76a0d36014" class="">.</p></details></li></ul><ul id="f128e6c3-5fd6-4689-af49-63817dd50c9a" class="toggle"><li><details open=""><summary>004 | Voyage au Macronstran</summary><p id="0bc847d0-5be9-4fa0-a23c-abb0c8dc5dac" class="">Macronstan, année 2021. Le monstre se promène sur des vois abandonées de chemin de fer. rien a l&#x27;horizon, hormis des fougeres. Le bruit du vent et le craquement du bois.</p><p id="6e5d094b-5a57-4d16-b67a-c7e2fdee1a7e" class="">Il se sent intrigué par le tunnel au bout du chemin... Il se rapproche lentement et se retrouve dans le noir complet, il a peur, et cherche à faire demi tour, mais il n’y a plus de lumiere derriere lui , il panique cherche à sortir , mais ne voit rien, et il trebuche sur les rails, il tombe et perd connaissance. Silence.</p><p id="badb195e-d643-4c81-945a-829591079a81" class="">Il se réveille et voit à nouveau la lumière, le jour, les rails mais c’est se rend compte que c’est pas le même lieu où il était avant, même s’il est semblable. Il longe les commerces qui ont envahie la petite ceinture, et observe un mur d’une dizaine de métres de haut, qui semble se prolonger sur plusieures kilometres. Les maisons n’existent plus, il y a des favellas à la place.</p><p id="34fab433-aecc-4763-a25d-8cafb13c3ef5" class="">.</p></details></li></ul><ul id="72fee663-14be-45f4-b1c2-eb0c0dbecf1f" class="toggle"><li><details open=""><summary>005 | Misobanc</summary><p id="75d4a202-940a-4738-8841-0b2140023961" class="">La Terre du bas est une miso-banc de la terduho, la miso-banc est le nom de la terre du bas, tous les déchets produits, ont été produits dans de telles quantités qu’ils ne sont plus devenus visibles, devenus ainsi mis au banc, ces déchets plastiques se régénèrent organiquement, sans crainte de manquer de ressources.</p><p id="929b24a0-8a5b-440f-9fb5-5586482ea391" class="">À miso-banc, la vie foisonne, un nouveau spécimen vivant apparaît : les verzagoras, ils portent leurs habitations sur leurs dos.</p></details></li></ul><p id="bcc8ae85-5037-4c62-8228-5d1e6ff229c7" class="">
+</p><p id="e9e85a55-883d-4504-aca9-99c1670a4872" class="">
+</p><p id="42427c51-a649-496a-b5b1-126d9ce24907" class="">
+</p><p id="979f6f05-5477-46c9-a655-f3d645864816" class=""><strong>Retour d’expérience:</strong></p><p id="5aecd3d1-0548-488c-9752-63ca97956555" class="">Ce rendez-vous etait le premier du cycle Agoravers ou nous nous permetions de donner autant de place au recit, a la narration et l’experience a porte ses fruits. C’est a ce moment que j’ai vraiment (Hugo) senti quelque chose de propre a l’Agoravers emerger. Remettre en cause de la centralite des references a la mytholgie greco-romaine (Œdipe, Sisyphe) dans notre maniere de faire societe dans le virtuel et le physique, a permis de faire emerger des valeurs humaines plutot de des projections technocratiques.</p><p id="4c88530c-d745-431f-82ad-6388964bd344" class="">
+</p><p id="8cb2875e-4dbf-4f69-b8de-0d44c161dd36" class="">Les mythes crees montrent aussi l’importance de l’improvisation linguistique, dans un monde ou un terme comme “metavers” que prendre de court a ce point les medias et l’oeuil publique, il me semble important de pouvoir y repondre par nos propres invectives: Agoravers! Verzagoras! Et se faisant, liberer nos imaginaires de l’emprise de ces mots valises (cliches en devenir?) suffocant: “metavers” “banlieue”.</p><p id="c51ba23d-995f-4bd8-863e-8b1ef417190c" class="">
+</p><p id="d5f82fad-9104-48bf-ac48-1597595a6714" class="">
+</p><p id="212d80d0-e46f-4cd1-9a25-e2adf8b7b28a" class=""><strong>Propositions pour l’Agoravers?</strong></p><ol type="1" id="e92bc00a-ea98-46cd-af5a-518bb86401d0" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">Le worldbuilding fait maison, c’est possible?</span>
+Le development des metavers est tres fortement influce par le <a href="https://www.youtube.com/watch?v=Mmisn8DLq9E">development des MMORG</a> dans les annees 2000, et l’evolution de la commercialisation de la Propriete intelectuelle par les grands acteurs de l’entertainment (ex. Disney) creant au travers des films, series, jeux, parcs d’attraction, des mondes tres polisses “qui font rever.” Cette commercialisation de la creation de mondes (worldbuilding) est-elle vouee a continuer dans les metavers? Ou pourrons-nous creer, rever, improviser des mondes atypiques?</li></ol><p id="905bfafc-2559-40c3-975f-673fccbfc8c1" class="">
+</p><ol type="1" id="deeb3005-ec44-4b0b-93de-31b04a1c88b1" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">Les mythes a laisser?</span>
+Il y a-t-il des mythes a laisser de cote dans cette aventure metavercielle? J’en ai une a proposer: celle de l’homme blanc inventeur fou: Steve Jobs, Elon Musk. Pourquoi pas arrêter d’associer innovation technologique, progrès, et futur.</li></ol><p id="533e4403-d851-4c27-ac5a-683d25ee1f94" class="">
+</p><ol type="1" id="ea113a59-96ed-49ff-85b0-81f96b433b6b" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid">Quels seront les monstres et parias du metavers?</span> 
+Qui seront ces monstres? Les createurs et creatrices? Les personnes ciblees a tort et montrees du doight? Les agresseurs? Les personnes mise en marge? Les gens qui ne sont pas dans le metavers?</li></ol><p id="8b337df5-a8d9-46ea-86de-9d157a8b5890" class="">
+</p><p id="8d174694-4588-4380-8b68-5ffb35b22429" class="">
+</p><p id="be55b8f2-6d1c-4217-8daa-ecdb6b464b2d" class="">
+</p><p id="29711ebb-2740-4bf3-8ac7-364c0d97b3d1" class="">
+</p></div></article></body></html>

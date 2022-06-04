@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RDV 004 | L&#x27;elasticite du temps dans l&#x27;Agoravers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9b485d87-c9a9-454d-b27a-0afe8900ebd1" class="page sans"><header><h1 class="page-title"><strong>RDV 004 | L&#x27;elasticite du temps dans l&#x27;Agoravers</strong></h1></header><div class="page-body"><p id="4c5224d8-8e1d-4196-af48-b24077da18d8" class="">
+</p><h1 id="681638bb-3148-469e-b75b-aef871d0f658" class=""><strong>CARNETS DE l&#x27;AGORAVERS 004</strong></h1><p id="c1da63ec-ea24-411f-a49d-c5d77053e22b" class=""><a href="https://docs.google.com/presentation/d/1K6MRDechvGTwty62rkoiLXYX4l7I7ahYR6LCMURZTrA/edit#slide=id.gf945893167_0_42">DIAPOS DE LA PRES</a></p><p id="de3b8cc8-d080-4d44-8dfc-98e34c8344c8" class="">
+</p><figure id="f9ca2c1a-2163-4b33-a3b5-79f2c3e1b294" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/004_AGORAVERSV5.jpg"><img style="width:288px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/004_AGORAVERSV5.jpg"/></a></figure><p id="6b649952-fa0c-4a75-9daa-e4cc1ec7149b" class="">
+</p><p id="ffae5d17-77fd-4b91-b111-83f5894a42c9" class=""><strong>Premise: </strong></p><p id="2f2628f6-47d3-4e96-8dca-2e6394ff18bd" class="">Prendre son temps en temps réel n’est pas chose facile, ensemble nous tenterons de nous ouvrir aux multiples tempéraments du temps qui passe. Cela se fera tant bien que mal en passant l&#x27;après-midi à contempler les propositions spatio-temporelles de cinq jeux vidéo où le temps joue un rôle impor-temps : <a href="https://www.davidoreilly.com/everything">Everything</a>, <a href="https://store.steampowered.com/app/221910/The_Stanley_Parable/">The Stanley Parable, Spore</a>, <a href="https://store.steampowered.com/app/600990/The_Gardens_Between/">The Gardens Between</a>, <a href="https://www.geoguessr.com/">GeoGuessr</a> !</p><p id="3bc6cd0b-4362-471e-a2a6-d6d8bad0ab69" class="">
+</p><p id="f6d74c5a-d4cc-44e4-95e8-dd36b7978958" class=""><strong>Retour d’expérience:</strong></p><p id="4411c03c-782b-45ab-a763-bc01bd0ddb0b" class="">Les mondes virtuels multi-joueurs qui ont inspirés la proposition actuelle des métavers sont construits principalement sur l’idee du <a href="https://fr.wikipedia.org/wiki/Temps_r%C3%A9el">temps reel</a>: “système pour lequel le respect des contraintes temporelles dans l&#x27;exécution des traitements est aussi important que le résultat de ces traitements,” cela permet de faire en sorte que les mouvements des avatars, leur rapports a l’environement, ou entre eux puisse etre vecu par les autre joueurs ou joueuses instantanement (en temps reel).</p><p id="5b7e6d94-eb02-4fb0-9df8-86ff8b33b71f" class="">
+</p><p id="312af362-461c-42d1-aa14-ab7ecaf88759" class="">Cette contrainte arbitraire d’un temps lineaire, hegemonique, (bien que logique a certains egards pratiques), car soit-disant plus absolument reele que d’autres (qui rappele d’ailleurs l’impact des <a href="https://journals.openedition.org/rhcf/416">systemes ferroviaires sur la standardisation du temps</a>), est assez limite compare au rapport au temps que d’autres jeux proposent: temps civilisationel dans Spore, temps elastique (de moleculaire a galactique) dans <a href="https://www.davidoreilly.com/everything">Everything</a>, ou malleable dans <a href="https://store.steampowered.com/app/600990/The_Gardens_Between/">Gardens Between</a>. D’ailleurs, cet impact du “temps reel” sur notre societe, a ses racines dans le “live” des medias, comme decrie par Paul Virillio “Sédentarisation terminale et définitive [...] fruit des télécommunications, qui entrouvre la possibilité inouïe d’une «civilisation de l’oubli», société d’un «direct» (live coverage) sans avenir et sans passé puisque sans étendue, sans durée, société intensément «présente» ici et là, autrement dit téléprésente au monde entier”.</p><p id="65f9befa-475f-49f4-8380-9e2856fc2825" class="">
+</p><p id="8550fcb7-b4b1-4b80-a4ba-484b6396c970" class="">
+</p><figure id="387ac079-6d86-42dd-a001-e03fde114396" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/20211204_160322(0).jpg"><img style="width:4032px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/20211204_160322(0).jpg"/></a></figure><p id="07f56624-a2f3-4ebf-9e8d-4239c5ac4e61" class="">
+</p><p id="09954168-e570-421f-a7b0-7347acda1f37" class="">
+</p><p id="312d3180-fe2a-4d34-b45e-961efbda409c" class="">Remettre en cause de notre rapport au temps est avant tout une intention philosophique, inspiree par le travail d’artistes comme <a href="https://www.instagram.com/blackquantumfuturism/">Black Quantum Futurists</a> qui puisent leur force de la mise en relation des communautes afroamericaines au travers des sciecles. Cepandant, le numerique offre aussi la possibilite de vivre des experiences extremement immersives qui nous font decouvrir de maniere presque charnelle un nouveau rapport aux dilatations spatio-temporelles qui ne pourraient demeurer que speculatives sans ce medium.</p><p id="a9252949-b6f2-4e25-91c4-9f1f3c845ead" class="">
+</p><p id="e329ca5e-122b-4f10-a846-aff976bc8f70" class="">Les jeux qui nous ont accompagne:</p><ul id="9d57946a-d318-44ef-8edd-fad0be9a48ff" class="toggle"><li><details open=""><summary><a href="https://fr.wikipedia.org/wiki/GeoGuessr">JEU 1 | GeoGuessr </a></summary><p id="c50a1d5b-935f-4011-ab4e-801ef34bdd58" class="">GeoGuessr « Let’s explore the World! » est un jeu vidéo en ligne publié le 9 mai 2013 et développé par Anton Wallén, un consultant en technologie de l’information suédois. Le jeu est basé sur la base de données de Google Maps pour la carte du monde ainsi que sur Google Street View1 pour la navigation virtuelle. Le joueur apparaît dans un endroit au hasard sur la carte dans le mode Street View et son but pour lui est de retrouver l’endroit où il se situe via une mappemonde.</p><p id="69c6f53a-498f-4619-a49d-d0e05f3bbd10" class="">
+</p><figure id="98f3c7bf-9175-48b1-b13e-8e5420eed50a" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/geogesseur.jpg"><img style="width:833px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/geogesseur.jpg"/></a></figure></details></li></ul><ul id="a88b1e04-24c1-4ed3-8158-dcd7b1b9fb81" class="toggle"><li><details open=""><summary><a href="https://fr.wikipedia.org/wiki/Spore_(jeu_vid%C3%A9o)">JEU 2 | Spore, Maxis</a><em> </em></summary><p id="cdea432e-b144-47bd-b979-b65d8773635c" class="">Spore est un jeu vidéo du créateur des Sims, Will Wright. Le jeu est sorti entre le 4 et le 7 septembre 2008 suivant les pays et est disponible sous Windows et Mac OS X.</p><p id="1a7f3d2c-c49b-41b9-b561-0289b62bc218" class="">L&#x27;objectif de ce jeu est d&#x27;amener une espèce à évoluer pour fonder une civilisation, passant d&#x27;une simple cellule à un empire s&#x27;étendant sur toute une galaxie.</p><figure id="a33f385a-9b59-474a-a8ba-c0ea94ca8e6f" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/spore.jpg"><img style="width:1728px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/spore.jpg"/></a></figure></details></li></ul><ul id="3921a7e5-0326-4de1-b76c-31abf0853c23" class="toggle"><li><details open=""><summary><a href="https://fr.wikipedia.org/wiki/Everything_(jeu_vid%C3%A9o)">JEU 3 | Everything </a></summary><p id="e0cf5b02-466e-4085-8da8-70b760b4172e" class="">Everything est un jeu de simulation dans lequel le joueur explore un univers généré de manière procédurale. Il est projeté dans un animal choisi aléatoirement et qu&#x27;il peut déplacer2. Il peut ensuite se projeter dans toute sorte d&#x27;autres objets de l&#x27;infiniment petit à l&#x27;infiniment grand.</p><p id="b7940b04-8022-449d-bf70-de0cb9655e95" class="">
+</p><figure id="5cb1bc16-424b-48ad-bd7e-2727690cecc0" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/everything.jpg"><img style="width:1600px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/everything.jpg"/></a></figure></details></li></ul><ul id="9e98123f-ef55-4e61-bb6f-79c02a63a9f9" class="toggle"><li><details open=""><summary><a href="https://fr.wikipedia.org/wiki/The_Stanley_Parable">JEU 4 | The Stanley Parable</a></summary><p id="7f216257-de2e-4f50-89f1-a3fc260659fa" class="">Le joueur incarne Stanley, l&#x27;employé numéro 427 d&#x27;une société. Son emploi est simple, presser des boutons, au bon moment et uniquement ceux affichés par l&#x27;écran de son ordinateur. Le jeu commence lorsqu&#x27;un jour, Stanley ne reçoit plus aucun ordre sur son prompteur, et qu&#x27;il apprend que tous ses collègues ont mystérieusement disparu.</p><figure id="85bf4192-4bda-43ae-b7f5-003b768e6a9a" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/2x1_NSwitchDS_TheStanleyParableUltraDeluxe_image1600w.jpg"><img style="width:1600px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/2x1_NSwitchDS_TheStanleyParableUltraDeluxe_image1600w.jpg"/></a></figure></details></li></ul><ul id="f65fb7b5-20e2-4fd6-b48f-8c37c914e9a8" class="toggle"><li><details open=""><summary><a href="https://fr.wikipedia.org/wiki/The_Gardens_Between">JEU 5 | The garden between</a></summary><p id="026162e4-d8ae-48b1-8433-8408e7e9a8f8" class="">The Gardens Between est un jeu vidéo de puzzle développé par le studio australien The Voxel Agents, sorti en septembre 2018.</p><p id="b65a8874-c3ed-4a13-9250-bcc770923fb4" class="">
+</p><p id="99ada57f-446b-43b0-9c35-826ef63bf39a" class="">Arina et Frendt sont voisins. Inséparables, ils passent le plus clair de leur temps sur une aire de jeu se trouvant juste derrière leurs deux maisons. Alors que la famille de Frendt est sur le point de déménager, les deux jeunes gens se retrouvent une dernière fois dans leur cabane perchée. Tout à coup, un éclair fige le déroulement du temps et celui-ci se met à défiler en sens inverse. Les personnages se retrouvent projetés dans un monde imaginaire, celui des souvenirs qu&#x27;ils ont eu ensemble.</p><figure id="26e5b1e3-8a7e-4a34-b842-e175ee2c489a" class="image"><a href="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/Untitled.png"><img style="width:720px" src="RDV%20004%20L&#x27;elasticite%20du%20temps%20dans%20l&#x27;Agoravers%209b485d87c9a9454db27a0afe8900ebd1/Untitled.png"/></a></figure></details></li></ul><p id="91b96cb3-77af-43ef-94fb-8936007c11c6" class="">
+</p><p id="e76ce5ac-dcdd-406b-b8b2-6dd50835a59f" class="">
+</p><p id="3e930bc4-0463-43d5-b7fe-fe0689ec6f97" class=""><strong>Propositions pour l’Agoravers?</strong></p><ol type="1" id="311234da-dda5-48ce-8429-e0f191cdae21" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">Les couches temporelles de l’Agoravers</span><p id="4a324e70-8972-4670-b96d-b6733038ff44" class="">L’Agoravers aura-t-il des versions? Sera-t-il possible de voyager dans ces couches numerico-temporelles comme le permet de faire la <a href="https://web.archive.org/">Wayback Machine</a> avec les sites webs? A quoi ressemblera cette experience dans un monde en 3D?</p><p id="40d3a3de-0226-49a7-b080-dcd357b86579" class="">
+</p></li></ol><ol type="1" id="1f33da2d-734d-431b-abe3-78a5b520a914" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">Be kind rewind</span><p id="71788474-d635-4100-8549-15f765bde770" class="">Le film Tenet, et le jeu Gardens Between tout deux proposent un rapport presque contre intuitif du temps base sur la possibilite d’evoluer dans un temps multi-directionel (avancer / rembobiner) pour avancer dans ce monde, est-ce possible de penser une telle diversite de rapports aux temps dans l’Agoravers? Quelles en seraient les implications?</p><p id="61cb8b2e-377d-4db1-b944-780704f20bfc" class="">
+</p></li></ol><ol type="1" id="0ab4932f-d8ad-4e7b-8a30-e7cbaba8619d" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid">La seconde elastique…</span><p id="9cd07829-ea85-4da3-8f9f-d1209e5ab8d1" class="">Une minute devrait-elle toujours durer 60 secondes? Dans des mondes programes, quel serait l’interet de manipuler la duree d’une minute? Que se passe-t-il quand ce canon temporel fluctue? Que fait-on dans les espaces au temps long ou au temps court? Cette quetion a ete exploree dans le jeu Everything, et le projet de la Ville Quantique.</p><p id="1070bec5-2994-48e6-a730-fed5ca0d2f9c" class="">
+</p></li></ol><ol type="1" id="13ed9db0-39e9-42b7-843a-582c980d1d3f" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid">Temps différé</span><p id="3f6ccb21-0488-4670-81d6-43d63b080537" class="">Le temps qui passe contre notre gres, dans le mondes virtuels comme dans le physique, peuvent faire durer le plaisir grace a l’anticipation, ou representer differentes formes de marginalisation: le temps de chargement d’un jeu en ligne (d’un metavers?) se fait-il aussi rapidement dans un centre urbain que depuis sa peripherie? Que faire de ce temps differe? Si l’on peut parfois rever lors d’un trajet de 90min RER pour arriver au centre de Paris en regardant par la fenetre, n’y a-t-il pas plus de chance d’etre bombarde de pubs en attendant le (tele)chargement d’un autre monde metaversiel?</p><p id="61605668-fce4-435d-b982-b25c9c45c76a" class="">
+</p></li></ol><ol type="1" id="4aea1a4d-2123-4099-b17b-123c1f3fec5b" class="numbered-list" start="5"><li><span style="border-bottom:0.05em solid">Natural connection</span><p id="f665d317-7006-44e6-884c-a33ed97528c0" class="">Il est difficile de parler de la structuration societale du temps sans prendre en compte le mouvement de l’astre sur lequel elle est basee. Cycle circadien, jour et nuit, calendrier lunaire, comment le soleil et les cycles naturels peuvent-ils etre valorises, ou mis-en-scene dans l’Agoravers?</p><p id="4f1eda37-ffac-47c9-a09c-f7b6d7f34479" class="">
+</p></li></ol><ol type="1" id="31427935-b40d-4e78-a2cc-4545dc49f00e" class="numbered-list" start="6"><li><span style="border-bottom:0.05em solid">Penser les activites cyclique ou saison?</span><p id="015b1db5-be9c-469c-a3e3-4cb7e29fc54e" class="">Les “Seasons passes” des games as a service, ont plus a voir avec la fast fashion que les cycles des saisons, il y a-t-il un interet a penser des saisons numeriques? Hibernation en ete quand les serveurs planetaires sont en surchauffe et Fete du Reboot a leur relancement?</p></li></ol><p id="90de220c-437e-4bde-8000-71baadd3cd8b" class="">
+</p><p id="cfaec60d-430e-431a-95ee-147fb6adbcb3" class="">
+</p><p id="d5b61e22-c355-4dcd-a790-42f8e491acba" class="">
+</p><p id="229ee3b9-0c31-4468-a7e1-32fa01aa98f1" class="">
+</p></div></article></body></html>
